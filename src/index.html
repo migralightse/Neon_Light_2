@@ -2,21 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Template</title>
+	<title>Neon
+		Light</title>
 	@@include('./partials/head.html')
 </head>
 <body>
 <!-- BEGIN  wrapper-->
 <div class="wrapper">
 	@@include('./sections/header.html')
-	<main class="main">
-		<h1>hello world!</h1>
-		<h2>hello world!</h2>
-		<h3>hello world!</h3>
-	</main>
-	@@include('./sections/footer.html',  {"socials": {
-		"fb": "facebook.com/include",
-		"tw": "twitter.com/include"
+	@@include('./sections/main.html')
+
+	@@include('./sections/footer.html', {"socials": {
+	"fb": "facebook.com/include",
+	"tw": "twitter.com/include"
 	}})
 </div>
 <!-- END wrapper-->

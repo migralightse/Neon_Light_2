@@ -54,5 +54,9 @@
     "stylelint-config-standard": "^26.0.0",
     "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-scss": "^4.3.0"
+  },
+  "dependencies": {
+    "jquery": "^3.7.1",
+    "select2": "^4.1.0-rc.0"
   }
 }

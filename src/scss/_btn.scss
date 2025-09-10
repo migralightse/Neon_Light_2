@@ -1,32 +1,24 @@
 .btn {
 	display: inline-block;
-	height: 44px;
-	color: $colorBlack;
-	font-size: 14px;
-	font-weight: 400;
-	font-family: Roboto, sans-serif;
-	line-height: 40px;
-	text-align: center;
+	padding: 20px 16px;
+	width: 249px;      // висота і ширина кнопки
+	border-radius: 32px;
+	border: 2px solid var(--Body-Brand, #01D0CC);
+	background: transparent;          // прозорий фон
+	color: var(--Body-Brand, #01D0CC);
+
+	/* Button/bold 16px */
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%; /* 16px */
 	text-decoration: none;
-	padding: 0 20px;
-	transition: all .3 ease;
-	outline: none;
-	cursor: pointer;
+	transition: all 0.4s ease-in-out;
+	text-align: center;
 
-	&:hover,
-	&:active {
-		color: $colorWhite;
-		outline: none;
-	}
-
-	&:focus {
-		outline: none;
-	}
-
-	&.disabled,
-	&[disabled] {
-		pointer-events: none;
-		opacity: .5;
-		cursor: auto;
+	&:hover {
+		background: #00ffff;             // при ховері заповнюємо кольором
+		color: #000;                     // колір тексту змінюється
 	}
 }
