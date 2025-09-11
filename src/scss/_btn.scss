@@ -1,10 +1,10 @@
 .btn {
 	display: inline-block;
 	padding: 20px 16px;
-	width: 249px;      // висота і ширина кнопки
+	width: 249px; // висота і ширина кнопки
 	border-radius: 32px;
 	border: 2px solid var(--Body-Brand, #01D0CC);
-	background: transparent;          // прозорий фон
+	background: transparent; // прозорий фон
 	color: var(--Body-Brand, #01D0CC);
 
 	/* Button/bold 16px */
@@ -18,7 +18,35 @@
 	text-align: center;
 
 	&:hover {
-		background: #00ffff;             // при ховері заповнюємо кольором
-		color: #000;                     // колір тексту змінюється
+		background: #00ffff; // при ховері заповнюємо кольором
+		color: #000; // колір тексту змінюється
+	}
+}
+
+
+.btn.mod {
+	display: inline-block;
+	padding: 13px 0;
+	width: 100%; // висота і ширина кнопки
+	border-radius: 32px;
+	border: none;
+	background: white; // прозорий фон
+
+	/* Button/bold 16px */
+	color: var(--Text-Primary, #262626);
+
+	/* Button/bold 14px */
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 100%; /* 14px */
+	transition: all 0.4s ease-in-out;
+	text-align: center;
+
+	&:hover {
+		background: #00ffff; // при ховері заповнюємо кольором
+		color: #000; // колір тексту змінюється
+		opacity: 1;
 	}
 }

@@ -1,0 +1,143 @@
+.info_work {
+	background-color: black;
+	position: relative;
+	.back_img{
+		position: absolute;
+		left: 108px;
+		bottom: 102px;
+	}
+	.back_img_ellipse{
+		position: absolute;
+		left: 0;
+		bottom: 0;
+	}
+
+	.info_work_title {
+		max-width: 591px;
+		padding: 89px 0 55px 0;
+		color: var(--Text-Inverse, #FFF);
+
+		/* Heading/h2 */
+		font-family: 'Unbounded', sans-serif;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 110%; /* 39.6px */
+	}
+
+	.info_work_info {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-bottom: 150px;
+		position: relative;
+		.info_work__img {
+			img{
+				max-height: 490px;
+				width: 587px;
+				position: absolute;   /* 👈 всі картинки одна над одною */
+				top: 0;
+				left: 0;
+				border-radius: 16px;
+				overflow: hidden;
+				height: 100%;
+				object-fit: cover;    /* щоб не спотворювались */
+				opacity: 0;
+				transition: opacity .4s ease-in-out;
+			}
+		}
+		.info_work__img img.active {
+			opacity: 1;
+			z-index: 1;
+		}
+
+
+			.info_work__desc {
+				width: 487px;
+				display: flex;
+				flex-direction: column;
+				gap: 44px;
+				position: relative;
+
+
+				.desc_wrapper{
+					display: flex;
+					gap: 30px;
+					position: relative;
+					.desc_info{
+						display: grid;
+						gap: 8px;
+					}
+					.desc_title{
+						color: var(--Text-Inverse, #FFF);
+
+						/* Heading/h5 */
+						font-family: 'Unbounded', sans-serif;
+						font-size: 18px;
+						font-style: normal;
+						font-weight: 500;
+						line-height: 110%; /* 19.8px */
+					}
+					.desc_text{
+						color: var(--Text-Disabled, #9D9D9D);
+
+						/* Body/reg 16px */
+						font-family: 'Montserrat', sans-serif;
+						font-size: 16px;
+						font-style: normal;
+						font-weight: 400;
+						line-height: 140%; /* 22.4px */
+					}
+				}
+			}
+
+		.desc_wrapper:not(:last-child)::before {
+			content: "";
+			position: absolute;
+			top: 57px;
+			left: 23.5px;
+			width: 1px;
+			height: 69%;
+			background: #3a3a3a;
+			z-index: 0;
+		}
+
+
+		.info_work__desc button {
+			border-radius: 50%;
+			border: 2px solid var(--Body-Brand, #01D0CC);
+			background: black;
+			color: var(--Body-Brand, #01D0CC);
+			font-family: Unbounded, sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			cursor: pointer;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: fit-content;
+			height: fit-content;
+			padding: 10px;       /* жодних падінгів */
+			aspect-ratio: 1 / 1;  /* гарантія кола */
+			margin: 0;
+			line-height: 1;
+			transition: all 0.3s ease;
+			letter-spacing: 1px;
+			position: relative;
+			z-index: 1;
+		}
+
+
+		/* hover */
+		.info_work__desc button:hover,
+		.info_work__desc button.active {
+			background: var(--Body-Brand, #01D0CC);
+			color: #000;
+		}
+
+
+
+
+	}
+
+}
