@@ -148,56 +148,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 //////////ready_slider_wrapper//////////////////
-const readySlider = new Swiper('.ready_slider_wrapper', {
-	slidesPerView: "auto",
-	spaceBetween: 24,
-	loop: false,
-	autoplay: {
-		delay: 0,
-		disableOnInteraction: false,
-	},
-	speed: 4000,
-	slidesOffsetBefore: 0,
-	slidesOffsetAfter: (window.innerWidth - 1200) / 2,
-	pagination: {
-		el: '.ready_slider_wrapper .swiper-pagination',
-		clickable: true,
-	},
-	on: {
-		slideChange(swiper) {
-			const bullets = swiper.pagination.bullets;
-			const activeIndex = swiper.realIndex;
-			const prevIndex = swiper.previousIndex;
-			const parent = document.querySelector('.ready_slider_wrapper .swiper-pagination');
-
-			if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
-
-			const current = bullets[activeIndex];
-			const previous = bullets[prevIndex];
-
-			const currentLeft = current.offsetLeft;
-			const prevLeft = previous.offsetLeft;
-
-			const minLeft = Math.min(currentLeft, prevLeft);
-			const maxLeft = Math.max(currentLeft, prevLeft);
-
-			parent.style.setProperty('--bullet-left', minLeft + 'px');
-			parent.style.setProperty('--bullet-width', (maxLeft - minLeft + 12) + 'px');
-
-			setTimeout(() => {
-				parent.style.setProperty('--bullet-left', currentLeft + 'px');
-				parent.style.setProperty('--bullet-width', '12px');
-			}, 350);
+function initCustomSwiper(selector) {
+	return new Swiper(selector, {
+		slidesPerView: "auto",
+		spaceBetween: 24,
+		loop: false,
+		autoplay: {
+			delay: 0,
+			disableOnInteraction: false,
 		},
-		init(swiper) {
-			const bullets = swiper.pagination.bullets;
-			const activeBullet = bullets[swiper.realIndex];
-			const parent = document.querySelector('.ready_slider_wrapper .swiper-pagination');
-			if (activeBullet && parent) {
-				parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
-				parent.style.setProperty('--bullet-width', '12px');
+		speed: 4000,
+		slidesOffsetBefore: 0,
+		slidesOffsetAfter: (window.innerWidth - 1200) / 2,
+		pagination: {
+			el: selector + ' .swiper-pagination',
+			clickable: true,
+		},
+		on: {
+			slideChange(swiper) {
+				const bullets = swiper.pagination.bullets;
+				const activeIndex = swiper.realIndex;
+				const prevIndex = swiper.previousIndex;
+				const parent = document.querySelector(selector + ' .swiper-pagination');
+
+				if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
+
+				const current = bullets[activeIndex];
+				const previous = bullets[prevIndex];
+
+				const currentLeft = current.offsetLeft;
+				const prevLeft = previous.offsetLeft;
+
+				const minLeft = Math.min(currentLeft, prevLeft);
+				const maxLeft = Math.max(currentLeft, prevLeft);
+
+				parent.style.setProperty('--bullet-left', minLeft + 'px');
+				parent.style.setProperty('--bullet-width', (maxLeft - minLeft + 12) + 'px');
+
+				setTimeout(() => {
+					parent.style.setProperty('--bullet-left', currentLeft + 'px');
+					parent.style.setProperty('--bullet-width', '12px');
+				}, 350);
+			},
+			init(swiper) {
+				const bullets = swiper.pagination.bullets;
+				const activeBullet = bullets[swiper.realIndex];
+				const parent = document.querySelector(selector + ' .swiper-pagination');
+				if (activeBullet && parent) {
+					parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
+					parent.style.setProperty('--bullet-width', '12px');
+				}
 			}
 		}
-	}
-});
+	});
+}
+
+// ініціалізація обох
+const readySlider = initCustomSwiper('.ready_slider_wrapper');
+const howDoSlider = initCustomSwiper('.how_do_swiper');
 
