@@ -208,3 +208,10 @@ const readySlider = initCustomSwiper('.ready_slider_wrapper');
 const howDoSlider = initCustomSwiper('.how_do_swiper');
 const feedbackSlider = initCustomSwiper('.feedback_swiper');
 
+
+///////
+AOS.init({
+	duration: 1200, // тривалість анімації в мс
+	offset: 100,    // відстань від верху екрану до елемента для початку анімації
+	once: false,    // анімація повторюється при повторному скролі
+});
