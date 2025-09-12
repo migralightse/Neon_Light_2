@@ -1,0 +1,1 @@
+{"version":3,"file":"app.js","names":["$","document","ready"],"sources":["app.js"],"sourcesContent":["'use strict'\r\n$( document ).ready(\r\n\tfunction() {\r\n\t}\r\n);\r\n"],"mappings":"AAAA,YAAY;;AACZA,CAAC,CAAEC,QAAS,CAAC,CAACC,KAAK,CAClB,YAAW,CACX,CACD,CAAC","ignoreList":[]}
