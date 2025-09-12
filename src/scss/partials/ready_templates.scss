@@ -117,24 +117,6 @@
 
 		.swiper-pagination {
 			position: absolute;
-			bottom: 20px;
-			left: 0;
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			gap: 12px;
-
-			.swiper-pagination-bullet {
-				width: 12px;
-				height: 12px;
-				border-radius: 50%;
-				background: #959595;
-				opacity: 0.4;
-				position: relative;
-			}
-		}
-		.swiper-pagination {
-			position: absolute;
 			bottom: 76px;
 			left: 0;
 			width: 100%;

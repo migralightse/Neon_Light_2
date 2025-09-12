@@ -173,7 +173,8 @@ function initCustomSwiper(selector) {
   });
 }
 
-// ініціалізація обох
+// ініціалізація
 const readySlider = initCustomSwiper('.ready_slider_wrapper');
 const howDoSlider = initCustomSwiper('.how_do_swiper');
+const feedbackSlider = initCustomSwiper('.feedback_swiper');
 //# sourceMappingURL=main.js.map

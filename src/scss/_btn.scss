@@ -1,7 +1,8 @@
 .btn {
 	display: inline-block;
 	padding: 20px 16px;
-	width: 249px; // висота і ширина кнопки
+	max-width: 249px; // висота і ширина кнопки
+	width: 100%;
 	border-radius: 32px;
 	border: 2px solid var(--Body-Brand, #01D0CC);
 	background: transparent; // прозорий фон
