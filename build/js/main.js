@@ -30,7 +30,7 @@ const showcaseSwiper = new Swiper('.showcase_swiper', {
   autoplay: {
     delay: 0,
     // без паузи
-    disableOnInteraction: false // не зупиняти після взаємодії
+    disableOnInteraction: true // не зупиняти після взаємодії
   },
   speed: 4000,
   // швидкість “стрічки” (чим більше, тим повільніше)
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//////////ready_slider_wrapper//////////////////
+//////////слайдери 3х//////////////////
 function initCustomSwiper(selector) {
   return new Swiper(selector, {
     slidesPerView: "auto",
@@ -178,12 +178,38 @@ const readySlider = initCustomSwiper('.ready_slider_wrapper');
 const howDoSlider = initCustomSwiper('.how_do_swiper');
 const feedbackSlider = initCustomSwiper('.feedback_swiper');
 
-///////
+///анімаціїї////
 AOS.init({
   duration: 1200,
-  // тривалість анімації в мс
-  offset: 100,
-  // відстань від верху екрану до елемента для початку анімації
-  once: false // анімація повторюється при повторному скролі
+  easing: 'ease-out-cubic',
+  offset: 150,
+  delay: 0,
+  once: false,
+  mirror: true,
+  anchorPlacement: 'center-bottom'
+});
+
+///////// бургер меню//////////
+const burger = document.getElementById('burger');
+const closeMenu = document.getElementById('closeMenu');
+const menu = document.querySelector('.header__nav');
+const overlay = document.getElementById('overlay');
+burger.addEventListener('click', () => {
+  menu.classList.toggle('active');
+  overlay.classList.toggle('active');
+  burger.classList.toggle('open');
+  document.body.classList.toggle('no-scroll'); // блокуємо/розблокуємо скрол
+});
+closeMenu.addEventListener("click", () => {
+  menu.classList.remove('active');
+  overlay.classList.remove('active');
+  burger.classList.remove('open');
+  document.body.classList.remove('no-scroll'); // обов'язково розблокувати
+});
+overlay.addEventListener('click', () => {
+  menu.classList.remove('active');
+  overlay.classList.remove('active');
+  burger.classList.remove('open');
+  document.body.classList.remove('no-scroll'); // обов'язково розблокувати
 });
 //# sourceMappingURL=main.js.map

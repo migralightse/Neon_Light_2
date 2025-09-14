@@ -92,3 +92,12 @@ button {
 	margin: 0 auto;
 	max-width: 1200px;
 }
+@media (max-width: 1440px) {
+	.container{
+		padding: 0 20px;
+	}
+}
+
+body.no-scroll {
+	overflow: hidden;
+}

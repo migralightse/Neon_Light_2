@@ -57,8 +57,8 @@
 
 .showcase_slide {
 	display: flex;
-	max-width: 891px;
-	height: 600px;
+	max-width: 891px!important;
+	height: 600px!important;
 	padding: 24px;
 	flex-direction: column;
 	align-items: flex-start;
@@ -103,6 +103,7 @@
 		width: 100%;
 		overflow: hidden; /* важливо */
 		max-height: 478px;
+		height: 100%;
 	}
 }
 
@@ -116,7 +117,6 @@
 
 	.swiper-wrapper {
 		display: flex;
-		gap: 36px; // відстань між слайдами
 	}
 
 	.swiper-slide {
@@ -201,7 +201,48 @@
 }
 
 
+@media (max-width: 1199px) {
+	.showcase_top {
+		padding: 48px 0 16px 0;
+	}
+}
 
+@media (max-width: 768px) {
+	.showcase_bottom .showcase_swiper_bottom{
+		padding-bottom: 24px;
+	}
+	.showcase_bottom .showcase_bottom__title{
+		padding: 24px 0 24px 0;
+	}
+	.showcase_swiper .swiper-wrapper{
+		gap: 0;
+	}
+	.showcase_slide {
+		height: 380px !important;
+	}
+	.showcase_slide_img {
+		max-height: 250px;
+	}
+	.showcase_slide .showcase_slide_img{
+		max-height: 77%;
+	}
+}
+@media (max-width: 480px) {
+	.showcase_swiper .swiper-pagination{
+		bottom: 20px!important;
+	}
+	.showcase_swiper{
+		padding-bottom: 48px!important;
+	}
+	.showcase_top {
+		padding: 24px 0 16px 0;
+	}
+	.showcase_title{
+		font-size: 30px;
+		padding-bottom: 24px;
+
+	}
+}
 
 
 

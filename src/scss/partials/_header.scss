@@ -1,4 +1,4 @@
-.header{
+.header {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -7,32 +7,6 @@
 	z-index: 1000;
 	transition: all 0.4s ease-in-out;
 
-}
-body.scrolled {
-	.header {
-		background: rgba(255, 255, 255, 0.6);
-		backdrop-filter: blur(10px);
-		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		.header_top{
-			border-bottom: 1px solid var(--Body-Mid-Grey, #7a7a7a);
-		}
-	}
-}
-
-body.scrolled {
-	.header__dropdown-list{
-		background: rgba(170, 170, 170, 0.9) !important;
-		backdrop-filter: blur(10px);
-		box-shadow: 0 4px 12px rgba(0,0,0,.1);
-	}
-	.header__dropdown {
-
-		li:hover {
-			background: rgba(245, 245, 245, 0.6)!important;
-			backdrop-filter: blur(8px);
-			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-		}
-	}
 }
 
 .header_top {
@@ -87,6 +61,9 @@ body.scrolled {
 	}
 
 	.header_top__right {
+		display: flex;
+		align-items: center;
+
 		.header__dropdown {
 			position: relative;
 			display: inline-block;
@@ -105,7 +82,7 @@ body.scrolled {
 				font-style: normal;
 				font-weight: 400;
 				border: none;
-				padding: 10px 0 0 10px;
+				padding: 0 0 0 10px;
 
 				.header__dropdown-arrow {
 					transition: transform 0.25s ease-in-out;
@@ -145,7 +122,6 @@ body.scrolled {
 			}
 
 
-
 			&.open {
 				.header__dropdown-list {
 					opacity: 1;
@@ -164,7 +140,9 @@ body.scrolled {
 .header_bottom {
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 	padding: 14px 0;
+	position: relative;
 
 	.header_logo {
 		.header_logo__img {
@@ -193,9 +171,19 @@ body.scrolled {
 		display: flex;
 		align-items: center;
 
+		.btn-close {
+			display: none;
+			justify-content: center;
+			padding: 0 0;
+			cursor: pointer;
+			background-color: rgba(0, 0, 0, 0) ;
+			width: 26px;
+			height: 27px;
+			border: none;
+		}
+
 		.header__menu {
 			display: flex;
-
 			gap: 50px;
 		}
 
@@ -214,9 +202,118 @@ body.scrolled {
 		}
 	}
 
-	.header_icons{
+	.header_icons {
 		display: flex;
 		align-items: center;
 		gap: 24px;
+	}
+
+	.burger-menu {
+		display: none;
+		width: 20px;
+		height: 12.5px;
+		flex-shrink: 0;
+		cursor: pointer;
+
+		.bar {
+			height: 1.5px;
+			width: 100%;
+			background-color: #000000;
+			display: block;
+			border-radius: 5px;
+			transition: .3s ease;
+			pointer-events: none;
+			margin-bottom: 4px;
+		}
+
+		.bar_mod {
+			width: 60%;
+		}
+	}
+
+	.overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.4);
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.3s ease-in-out;
+		z-index: 3;
+		cursor: pointer;
+		right: 0;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+
+}
+
+
+@media (max-width: 1199px) {
+	.btn-close {
+		display: flex!important;
+	}
+	.header__nav {
+		display: flex;
+		justify-content: space-between;
+		position: fixed;
+		top: 0;
+		right: -100%; /* спочатку приховане */
+		width: 450px;
+		height: 100%;
+		background: #fff;
+		padding: 65px 20px 20px 20px;
+		transition: right 0.4s ease-in-out;
+		z-index: 999;
+		align-items: normal !important;
+
+		&::after {
+			content: "";
+			position: absolute;
+			top: 42px;      // відступ зверху (залежить від твого padding)
+			left: 20px;     // відступ зліва
+			right: 20px;    // відступ справа
+			height: 1px;    // товщина лінії
+			background: #ccc; // колір
+		}
+	}
+	.header__nav.active {
+		right: 0; /* виїжджає справа */
+	}
+
+	.header_bottom .header__nav .header__menu {
+		flex-direction: column; // замість рядка -> стовпчик
+		gap: 20px;              // можна зменшити відстань для мобілки
+		align-items: flex-start; // щоб не розтягувало на всю ширину
+	}
+
+
+	.header_bottom .burger-menu {
+		display: block;
+	}
+	.header_bottom .header_icons {
+		display: none;
+	}
+
+}
+
+@media (max-width: 768px) {
+	.header_top .header_top__left {
+		gap: 15px;
+	}
+}
+
+@media (max-width: 480px) {
+	.header__nav {
+		width: 100%;
+	}
+	.header_top {
+		justify-content: end;
+	}
+	.header_top .header_top__left {
+		display: none;
 	}
 }
