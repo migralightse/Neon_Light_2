@@ -102,28 +102,34 @@
 
 
 		.land-info_work__desc button {
-			border-radius: 50%;
-			border: 2px solid var(--Body-Brand, #01D0CC);
-			background: black;
-			color: var(--Body-Brand, #01D0CC);
-			font-family: Unbounded, sans-serif;
-			font-size: 14px;
-			font-weight: 700;
-			cursor: pointer;
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			width: fit-content;
-			height: fit-content;
-			padding: 10px;       /* жодних падінгів */
-			aspect-ratio: 1 / 1;  /* гарантія кола */
-			margin: 0;
-			line-height: 1;
+
+			min-width: 48px;          /* однакова ширина */
+			min-height: 48px;
+			height: 100%;
+			border-radius: 50%;   /* коло */
+
+
+
+			border: 2px solid var(--Body-Brand, #01D0CC);
+			background: black;
+			color: var(--Body-Brand, #01D0CC);
+
+			font-family: Unbounded, sans-serif;
+			font-size: 14px;
+			font-weight: 700;
+			line-height: 1;          /* щоб текст не "стрибав" */
+			text-align: center;
+			letter-spacing: 0;
+
+			cursor: pointer;
 			transition: all 0.3s ease;
-			letter-spacing: 1px;
 			position: relative;
 			z-index: 1;
 		}
+
 
 
 		/* hover */
@@ -142,21 +148,28 @@
 
 
 @media (max-width: 1199px) {
+
+	.land-info_work .land-info_work_info .land-desc_wrapper:not(:last-child)::before {
+	height: 55%;
+	}
+
 	.land-info_work .land-info_work_title{
 		padding: 60px 0 40px 0;
 	}
 	.land-info_work .land-info_work_info .land-info_work__desc .land-desc_wrapper .land-desc_info{
-		display: none;
+
 	}
 	.land-info_work .land-info_work_info{
-		padding-bottom: 70px;
+		padding-bottom: 60px;
+		flex-direction: column;
+		gap: 30px;
 	}
 	.land-info_work .land-info_work_info .land-info_work__desc{
-		max-width: 10%;
+		max-width: 100%;
 		width: 100%;
 	}
 	.land-info_work .land-info_work_info .land-info_work__img{
-		max-width: 80%;
+		max-width: 100%;
 		width: 100%;
 		height: 490px;
 
@@ -175,10 +188,14 @@
 		padding: 24px 0 16px 0;
 	}
 
-	.land-info_work .land-info_work_info .land-info_work__desc {
-		max-width: 15%;
-	}
 	.land-info_work .land-info_work_info .land-info_work__img{
 		max-height: 400px;
+	}
+
+	.land-info_work .land-info_work_info .land-info_work__desc .land-desc_wrapper .land-desc_title{
+		font-size: 16px;
+	}
+	.land-info_work .land-info_work_info .land-info_work__desc .land-desc_wrapper .land-desc_text{
+		font-size: 14px;
 	}
 }

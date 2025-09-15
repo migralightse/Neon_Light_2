@@ -188,6 +188,62 @@
 		padding: 60px 0 0 0;
 	}
 
+	.land-how_do_filter {
+		display: flex!important;
+		flex-wrap: nowrap!important;                /* кнопки не переносяться */
+		overflow-x: auto!important;                 /* горизонтальний скрол */
+		scroll-snap-type: x mandatory!important;    /* прилипає як слайдер */
+		-webkit-overflow-scrolling: touch;
+		gap: 14px;                        /* проміжки між кнопками */
+		padding: 10px;
+		border-radius: 40px!important;
+		background: var(--Body-Light-Grey, #F9F9F9);
+		margin-bottom: 29px!important;
+	}
+
+	/* кнопки */
+	.land-how_do-btn {
+		flex: 0 0 auto;                   /* щоб не стискалися */
+		scroll-snap-align: start;
+
+		padding: 10px 15px;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		border: none;
+		border-radius: 9999px;            /* повністю округлі краї */
+		background-color: transparent;
+		color: #000;
+		cursor: pointer;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.land-how_do-btn.active {
+		background-color: #000;
+		color: #fff;
+		border-color: #000;
+	}
+
+	.land-how_do-btn:hover {
+		background-color: #000;
+		color: #fff;
+	}
+
+	/* скролбар */
+	.land-how_do_filter::-webkit-scrollbar {
+		height: 6px;
+	}
+	.land-how_do_filter::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.land-how_do_filter::-webkit-scrollbar-thumb {
+		background: #000;
+		border-radius: 10px;
+	}
+
+
 }
 
 @media (max-width: 480px) {

@@ -248,6 +248,51 @@
 	.land-showcase_top {
 		padding: 48px 0 16px 0;
 	}
+	.land-showcase_filter {
+		display: flex;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory; /* вмикаємо слайдер-прив’язку */
+		-webkit-overflow-scrolling: touch; /* плавність на iOS */
+		gap: 10px;
+		padding-bottom: 5px;
+	}
+
+	/* Приховуємо скролбар у Chrome/Safari */
+	.land-showcase_filter::-webkit-scrollbar {
+		height: 6px;
+	}
+	.land-showcase_filter::-webkit-scrollbar-track {
+		background: transparent;
+	}
+	.land-showcase_filter::-webkit-scrollbar-thumb {
+		background: #01D0CC;
+		border-radius: 10px;
+	}
+
+	.land-filter-btn {
+		flex: 0 0 auto;                   /* кнопка не стискається */
+		scroll-snap-align: start;         /* прилипає при скролі */
+
+		padding: 10px 15px;
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%;
+		border: none;
+		border-radius: 9999px;            /* повністю округлі краї */
+		background-color: transparent;
+		color: #000;
+		cursor: pointer;
+		transition: all 0.4s ease-in-out;
+	}
+
+	.land-filter-btn.active {
+		background-color: #000;
+		color: #fff;
+		border-color: #000;
+	}
 }
 
 @media (max-width: 768px) {

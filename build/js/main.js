@@ -193,13 +193,11 @@ AOS.init({
 });
 
 /////////////how_do///////////////////////////
-// Фільтри та свайпер для блоку "Що ми можемо"
+
 const howDoBtns = document.querySelectorAll('.land-how_do-btn');
 const howDoWrapper = document.querySelector('.land-how_do_swiper .swiper-wrapper');
 const howDoPreloader = document.querySelector('.land-how_do-preloader');
 let howDoSwiper;
-
-// Зберігаємо всі слайди у памʼяті
 const allHowDoSlides = Array.from(document.querySelectorAll('.land-how_do_swiper__item'));
 function initHowDoSwiper() {
   if (howDoSwiper) {
@@ -273,11 +271,7 @@ function filterHowDoSlides(category) {
     }, 300);
   }, 500);
 }
-
-// Старт
 initHowDoSwiper();
-
-// Обробка кліків
 howDoBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     howDoBtns.forEach(b => b.classList.remove('active'));
