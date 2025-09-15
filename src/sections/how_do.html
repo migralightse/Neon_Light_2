@@ -1,22 +1,44 @@
 <section class="land-how_do">
 	<div class="land-container">
-		<div class="land-showcase_top " data-aos="zoom-in" data-aos-duration="1500">
-			<div class="land-showcase_title" >
+		<div class="land-how_do_top " >
+			<div class="land-how_do_title" >
 				Що ми можемо?
 			</div>
-			<div class="land-showcase_filter" data-aos="zoom-in" data-aos-duration="1500">
-				<button class="land-filter-btn">Усі</button>
-				<button class="land-filter-btn">Об’ємні літери</button>
-				<button class="land-filter-btn">Об’ємні логотипи</button>
-				<button class="land-filter-btn">Лайтбокси</button>
-				<button class="land-filter-btn">LED-неон на підставці</button>
-				<button class="land-filter-btn">Світильники у вигляді будинків</button>
+			<div class="land-how_do_filter">
+				<button class="land-how_do-btn" data-filter="all">Усі</button>
+				<button class="land-how_do-btn" data-filter="litery">Об’ємні літери</button>
+				<button class="land-how_do-btn" data-filter="logotypy">Об’ємні логотипи</button>
+				<button class="land-how_do-btn" data-filter="lightbox">Лайтбокси</button>
+				<button class="land-how_do-btn" data-filter="lightbox">LED-неон на підставці</button>
+				<button class="land-how_do-btn" data-filter="logotypy">Світильники у вигляді будинків</button>
 			</div>
+		</div>
+	</div>
+
+
+	<div class="land-how_do_swiper__pre">
+	<div class="land-how_do-preloader">
+		<div class="land-preloader__svg">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+				<circle fill="#848383" stroke="#848383" stroke-width="2" r="15" cx="40" cy="65">
+					<animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+							 keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.4"></animate>
+				</circle>
+				<circle fill="#848383" stroke="#848383" stroke-width="2" r="15" cx="100" cy="65">
+					<animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+							 keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="-.2"></animate>
+				</circle>
+				<circle fill="#848383" stroke="#848383" stroke-width="2" r="15" cx="160" cy="65">
+					<animate attributeName="cy" calcMode="spline" dur="2" values="65;135;65;"
+							 keySplines=".5 0 .5 1;.5 0 .5 1" repeatCount="indefinite" begin="0"></animate>
+				</circle>
+			</svg>
+
 		</div>
 	</div>
 	<div class="land-how_do_swiper swiper" data-aos="zoom-in" data-aos-duration="1500">
 		<div class="swiper-wrapper">
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item"  data-category="logotypy">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do1.png" alt="">
@@ -27,7 +49,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item"  data-category="logotypy">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do2.png" alt="">
@@ -38,7 +60,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item" data-category="litery">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do3.png" alt="">
@@ -49,7 +71,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item" data-category="lightbox">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do4.png" alt="">
@@ -60,7 +82,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item" data-category="litery">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do5.png" alt="">
@@ -71,7 +93,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item" data-category="lightbox">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do4.png" alt="">
@@ -82,7 +104,7 @@
 
 				</div>
 			</div>
-			<div class="swiper-slide land-how_do_swiper__item">
+			<div class="swiper-slide land-how_do_swiper__item" data-category="lightbox">
 				<div class="land-how_do__img">
 					<a href="#">
 						<img src="img/how_do2.png" alt="">
@@ -96,5 +118,6 @@
 		</div>
 		<!-- Пагінація -->
 		<div class="swiper-pagination"></div>
+	</div>
 	</div>
 </section>

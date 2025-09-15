@@ -1,19 +1,92 @@
 .land-how_do {
-	.land-filter-btn {
-		margin-bottom: 0;
-		margin-right: 14px;
+
+	.land-how_do_title {
+		max-width: 345px;
+		color: var(--Text-Primary, #262626);
+		padding-bottom: 24px;
+
+		/* Heading/h2 */
+		font-family: Unbounded;
+		font-size: 36px;
+		font-style: normal;
+		font-weight: 500;
+		line-height: 110%; /* 39.6px */
 	}
 
-	.land-showcase_filter {
+	.land-how_do_filter {
+		display: flex;
+		flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
+		row-gap: 10px;
 		padding: 10px;
 		border-radius: 40px;
 		background: var(--Body-Light-Grey, #F9F9F9);
 		margin-bottom: 29px;
+
 	}
 
-	.land-showcase_title {
-		padding-bottom: 24px;
+	.land-how_do-btn {
+		padding: 10px 15px;
+		margin-bottom: 0;
+		margin-right: 14px; /* тільки горизонтальний проміжок */
+		margin-top: 0;
+
+		font-family: 'Montserrat', sans-serif;
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 700;
+		line-height: 100%; /* 14px */
+		border: none; // чорна рамка
+		border-radius: 9999px; // повністю округлі краї
+		background-color: transparent;
+		color: #000;
+		cursor: pointer;
+		transition: all 0.4s ease-in-out;
+
+		&.active {
+			background-color: #000;
+			color: #fff;
+			border-color: #000;
+		}
+
+		&:hover {
+			background-color: #000;
+			color: #fff;
+		}
 	}
+
+
+	.land-how_do_swiper__pre{
+		position: relative;
+	}
+
+	.land-how_do-preloader {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.9);
+		backdrop-filter: blur(2px);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease, visibility 0.3s ease;
+		z-index: 10;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.land-preloader__svg{
+			width: 100px;
+			height: 100px;
+		}
+	}
+	.land-how_do-preloader.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+
 
 	.land-showcase_top {
 		padding: 107px 0 0 0;
@@ -104,6 +177,9 @@
 			}
 		}
 	}
+
+
+
 }
 
 
