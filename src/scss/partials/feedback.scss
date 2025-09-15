@@ -139,3 +139,22 @@
 		}
 	}
 }
+
+
+@media (max-width: 1199px){
+	.feedback .feedback_title{
+		padding: 60px 0 24px 0;
+	}
+}
+@media (max-width: 480px){
+	.feedback .feedback_title{
+		padding: 24px 0 24px 0;
+		font-size: 30px;
+	}
+	.feedback .feedback_swiper{
+		padding-bottom: 48px;
+	}
+	.feedback .feedback_swiper .swiper-pagination{
+		bottom: 20px;
+	}
+}

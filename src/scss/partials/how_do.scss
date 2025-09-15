@@ -3,15 +3,18 @@
 		margin-bottom: 0;
 		margin-right: 14px;
 	}
-	.showcase_filter{
+
+	.showcase_filter {
 		padding: 10px;
 		border-radius: 40px;
 		background: var(--Body-Light-Grey, #F9F9F9);
 		margin-bottom: 29px;
 	}
-	.showcase_title{
+
+	.showcase_title {
 		padding-bottom: 24px;
 	}
+
 	.showcase_top {
 		padding: 107px 0 0 0;
 	}
@@ -100,5 +103,31 @@
 				width: var(--bullet-width, 12px);
 			}
 		}
+	}
+}
+
+
+@media (max-width: 1199px) {
+	.how_do .showcase_top {
+		padding: 60px 0 0 0;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.how_do .showcase_top {
+		padding: 24px 0 0 0;
+	}
+	.how_do .showcase_title {
+		font-size: 30px;
+	}
+	.how_do .how_do_swiper {
+		padding-bottom: 48px;
+	}
+	.how_do .how_do_swiper .swiper-pagination {
+		bottom: 20px;
+	}
+	.how_do .how_do_swiper .how_do_swiper__item{
+		height: 320px;
 	}
 }

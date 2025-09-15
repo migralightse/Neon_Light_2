@@ -101,7 +101,7 @@ const showcaseSwiperBottom = new Swiper('.showcase_swiper_bottom', {
 
 	autoplay: {
 		delay: 0,              // без паузи
-		disableOnInteraction: false, // не зупиняти після взаємодії
+		disableOnInteraction: true, // не зупиняти після взаємодії
 	},
 
 	speed: 4000, // швидкість “стрічки” (чим більше, тим повільніше)
@@ -155,7 +155,7 @@ function initCustomSwiper(selector) {
 		loop: false,
 		autoplay: {
 			delay: 0,
-			disableOnInteraction: false,
+			disableOnInteraction: true,
 		},
 		speed: 4000,
 		slidesOffsetBefore: 0,

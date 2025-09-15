@@ -22,6 +22,7 @@
 .showcase_filter {
 	display: flex;
 	flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
+	row-gap: 10px;
 }
 
 .filter-btn {
