@@ -1,12 +1,12 @@
-.work_showcase {
+.land-work_showcase {
 	background-color: #FFFFFF;
 }
 
-.showcase_top {
+.land-showcase_top {
 	padding: 68px 0 16px 0;
 }
 
-.showcase_title {
+.land-showcase_title {
 	max-width: 345px;
 	color: var(--Text-Primary, #262626);
 	padding-bottom: 26px;
@@ -19,13 +19,13 @@
 	line-height: 110%; /* 39.6px */
 }
 
-.showcase_filter {
+.land-showcase_filter {
 	display: flex;
 	flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
 	row-gap: 10px;
 }
 
-.filter-btn {
+.land-filter-btn {
 	padding: 10px 15px;
 	margin-right: 5px; /* тільки горизонтальний проміжок */
 	margin-bottom: 10px; /* вертикальний відступ нуль */
@@ -56,7 +56,7 @@
 }
 
 
-.showcase_slide {
+.land-showcase_slide {
 	display: flex;
 	max-width: 891px!important;
 	height: 600px!important;
@@ -69,12 +69,12 @@
 	border-radius: 24px;
 	background: var(--Body-Light-Grey, #F9F9F9);
 
-	.showcase_slide__title {
+	.land-showcase_slide__title {
 		display: grid;
 		gap: 4px;
 		padding-bottom: 26px;
 
-		.title_top {
+		.land-title_top {
 			color: var(--Text-Secondary, #434343);
 
 			/* Body/med 16px */
@@ -85,7 +85,7 @@
 			line-height: 140%; /* 22.4px */
 		}
 
-		.title_bottom {
+		.land-title_bottom {
 			color: var(--Text-Primary, #262626);
 
 			/* Heading/h4 */
@@ -98,7 +98,7 @@
 	}
 
 
-	.showcase_slide_img {
+	.land-showcase_slide_img {
 		display: flex;
 		border-radius: 16px;
 		width: 100%;
@@ -108,7 +108,7 @@
 	}
 }
 
-.showcase_swiper {
+.land-showcase_swiper {
 	position: relative!important;
 	width: 100vw!important; // на всю ширину екрана
 	margin-left: calc(50% - 50vw) !important; // зсунути, щоб вирівняти з екраном
@@ -120,7 +120,7 @@
 		display: flex;
 	}
 
-	.swiper-slide {
+	.land-swiper-slide {
 		flex-shrink: 0;
 	}
 
@@ -166,10 +166,10 @@
 }
 
 
-.showcase_bottom {
+.land-showcase_bottom {
 	background: var(--Body-Light-Grey, #F9F9F9);
 
-	.showcase_bottom__title {
+	.land-showcase_bottom__title {
 		padding: 59px 0 36px 0;
 		color: var(--Text-Primary, #262626);
 
@@ -180,13 +180,13 @@
 		line-height: 110%; /* 19.8px */
 	}
 
-	.showcase_slide_bottom {
+	.land-showcase_slide_bottom {
 		height: auto;
 		max-width: 120px;
 	}
 
 
-	.showcase_swiper_bottom {
+	.land-showcase_swiper_bottom {
 		padding-bottom: 59px;
 		width: 100vw; // на всю ширину екрана
 		margin-left: calc(50% - 50vw); // вирівнювання по екрану
@@ -203,42 +203,42 @@
 
 
 @media (max-width: 1199px) {
-	.showcase_top {
+	.land-showcase_top {
 		padding: 48px 0 16px 0;
 	}
 }
 
 @media (max-width: 768px) {
-	.showcase_bottom .showcase_swiper_bottom{
+	.land-showcase_bottom .land-showcase_swiper_bottom{
 		padding-bottom: 24px;
 	}
-	.showcase_bottom .showcase_bottom__title{
+	.land-showcase_bottom .land-showcase_bottom__title{
 		padding: 24px 0 24px 0;
 	}
-	.showcase_swiper .swiper-wrapper{
+	.land-showcase_swiper .swiper-wrapper{
 		gap: 0;
 	}
-	.showcase_slide {
+	.land-showcase_slide {
 		height: 380px !important;
 	}
-	.showcase_slide_img {
+	.land-showcase_slide_img {
 		max-height: 250px;
 	}
-	.showcase_slide .showcase_slide_img{
+	.land-showcase_slide .land-showcase_slide_img{
 		max-height: 77%;
 	}
 }
 @media (max-width: 480px) {
-	.showcase_swiper .swiper-pagination{
+	.land-showcase_swiper .swiper-pagination{
 		bottom: 20px!important;
 	}
-	.showcase_swiper{
+	.land-showcase_swiper{
 		padding-bottom: 48px!important;
 	}
-	.showcase_top {
+	.land-showcase_top {
 		padding: 24px 0 16px 0;
 	}
-	.showcase_title{
+	.land-showcase_title{
 		font-size: 30px;
 		padding-bottom: 24px;
 

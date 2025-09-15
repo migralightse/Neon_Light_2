@@ -80,7 +80,7 @@ button {
 	vertical-align: middle;
 }
 
-.wrapper {
+.land-wrapper {
 	position: relative;
 	min-width: 320px;
 	min-height: 100%;
@@ -88,16 +88,13 @@ button {
 }
 
 
-.container{
+.land-container{
 	margin: 0 auto;
 	max-width: 1200px;
 }
 @media (max-width: 1440px) {
-	.container{
+	.land-container{
 		padding: 0 20px;
 	}
 }
 
-body.no-scroll {
-	overflow: hidden;
-}

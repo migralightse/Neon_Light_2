@@ -1,44 +1,16 @@
-//////////////////випадашка в хедері ///////////////////////////
-document.addEventListener("DOMContentLoaded", () => {
-	const dropdown = document.querySelector(".header__dropdown");
-	if (!dropdown) return;
-
-	const btn = dropdown.querySelector(".header__dropdown-btn");
-	const list = dropdown.querySelector(".header__dropdown-list");
-	const btnText = btn.querySelector("span");
-
-	btn.addEventListener("click", () => {
-		dropdown.classList.toggle("open");
-	});
-
-	list.querySelectorAll("li").forEach(item => {
-		item.addEventListener("click", () => {
-			btnText.textContent = item.textContent;
-			dropdown.classList.remove("open");
-			console.log("Вибрано:", item.dataset.value);
-		});
-	});
-
-	document.addEventListener("click", e => {
-		if (!dropdown.contains(e.target)) {
-			dropdown.classList.remove("open");
-		}
-	});
-});
-
-
 
 ///////////////////showcaseSwiper//////////////////////////////////////
-const showcaseSwiper = new Swiper('.showcase_swiper', {
-	slidesPerView: "auto",
+const showcaseSwiper = new Swiper('.land-showcase_swiper', {
+	slidesPerView: "auto", // показує стільки, скільки влазить
 	spaceBetween: 36,
-	loop: false,
+	loop: true, // ✅ клонування для безшовності
 	autoplay: {
-		delay: 0,              // без паузи
-		disableOnInteraction: true, // не зупиняти після взаємодії
+		delay: 0, // ✅ без затримки
+		disableOnInteraction: false, // щоб не зупинявся при наведенні/кліку
 	},
-
-	speed: 4000, // швидкість “стрічки” (чим більше, тим повільніше)
+	speed: 3000, // ✅ чим більше значення, тим повільніше рух (наприклад, 6000-10000)
+	freeMode: true, // ✅ для "біжучої стрічки"
+	freeModeMomentum: false, // без інерції — рівномірний рух
 	slidesOffsetBefore: 0,
 	slidesOffsetAfter: (window.innerWidth - 1200) / 2,
 	pagination: {
@@ -46,10 +18,19 @@ const showcaseSwiper = new Swiper('.showcase_swiper', {
 		clickable: true,
 	},
 	on: {
+		init(swiper) {
+			const bullets = swiper.pagination.bullets;
+			const activeBullet = bullets[swiper.realIndex];
+			const parent = document.querySelector('.swiper-pagination');
+			if (activeBullet && parent) {
+				parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
+				parent.style.setProperty('--bullet-width', '12px');
+			}
+		},
 		slideChange(swiper) {
 			const bullets = swiper.pagination.bullets;
 			const activeIndex = swiper.realIndex;
-			const prevIndex = swiper.previousIndex;
+			const prevIndex = swiper.previousIndex % bullets.length;
 			const parent = document.querySelector('.swiper-pagination');
 
 			if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
@@ -60,80 +41,53 @@ const showcaseSwiper = new Swiper('.showcase_swiper', {
 			const currentLeft = current.offsetLeft;
 			const prevLeft = previous.offsetLeft;
 
-			// визначаємо відстань між точками
 			const minLeft = Math.min(currentLeft, prevLeft);
 			const maxLeft = Math.max(currentLeft, prevLeft);
 
-			// розтягуємо "рідкий" індикатор на всю довжину між точками
 			parent.style.setProperty('--bullet-left', minLeft + 'px');
 			parent.style.setProperty('--bullet-width', (maxLeft - minLeft + 12) + 'px');
 
-			// після анімації стискаємо назад у новій позиції
 			setTimeout(() => {
 				parent.style.setProperty('--bullet-left', currentLeft + 'px');
 				parent.style.setProperty('--bullet-width', '12px');
 			}, 350);
-		},
-		init(swiper) {
-			const bullets = swiper.pagination.bullets;
-			const activeBullet = bullets[swiper.realIndex];
-			const parent = document.querySelector('.swiper-pagination');
-			if (activeBullet && parent) {
-				parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
-				parent.style.setProperty('--bullet-width', '12px');
-			}
 		}
 	}
 });
 
 
 
-
 ///showcase_swiper_bottom///
-const showcaseSwiperBottom = new Swiper('.showcase_swiper_bottom', {
+const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
 	slidesPerView: "auto",
 	spaceBetween: 90,
 	freeMode: true,
-	loop: false,
+	loop: true,
 
 	slidesOffsetBefore: 0,
 	slidesOffsetAfter: 0,
 
 	autoplay: {
-		delay: 0,              // без паузи
-		disableOnInteraction: true, // не зупиняти після взаємодії
+		delay: 0,
+		disableOnInteraction: true,
 	},
 
-	speed: 4000, // швидкість “стрічки” (чим більше, тим повільніше)
-});
-
-
-
-
-
-
-///body_scroll/////
-window.addEventListener("scroll", function () {
-	if (window.scrollY > 100) {
-		document.body.classList.add("scrolled");
-	} else {
-		document.body.classList.remove("scrolled");
-	}
+	speed: 2000,
 });
 
 
 ////////////////////work_info///////////////////////
 document.addEventListener("DOMContentLoaded", () => {
-	const buttons = document.querySelectorAll(".info_work__desc button");
-	const images = document.querySelectorAll(".info_work__img img");
+	const buttons = document.querySelectorAll(".land-info_work__desc button");
+	const images = document.querySelectorAll(".land-info_work__img img");
 
 	buttons.forEach(btn => {
 		btn.addEventListener("mouseenter", () => {
-			// прибираємо активні класи
+
 			buttons.forEach(b => b.classList.remove("active"));
 			images.forEach(img => img.classList.remove("active"));
 
-			// додаємо активний клас для поточного
+
 			btn.classList.add("active");
 			const step = parseInt(btn.getAttribute("data-step"), 10);
 			if (images[step]) {
@@ -144,20 +98,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-
-
-
-//////////слайдери 3х//////////////////
+//////////swiper_3х//////////////////
 function initCustomSwiper(selector) {
 	return new Swiper(selector, {
 		slidesPerView: "auto",
 		spaceBetween: 24,
-		loop: false,
+		loop: true,
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: true,
 		},
-		speed: 4000,
+		speed: 3000,
 		slidesOffsetBefore: 0,
 		slidesOffsetAfter: (window.innerWidth - 1200) / 2,
 		pagination: {
@@ -203,13 +154,12 @@ function initCustomSwiper(selector) {
 	});
 }
 
-// ініціалізація
-const readySlider = initCustomSwiper('.ready_slider_wrapper');
-const howDoSlider = initCustomSwiper('.how_do_swiper');
-const feedbackSlider = initCustomSwiper('.feedback_swiper');
+const readySlider = initCustomSwiper('.land-ready_slider_wrapper');
+const howDoSlider = initCustomSwiper('.land-how_do_swiper');
+const feedbackSlider = initCustomSwiper('.land-feedback_swiper');
 
 
-///анімаціїї////
+///animate////
 AOS.init({
 	duration: 1200,
 	easing: 'ease-out-cubic',
@@ -221,32 +171,4 @@ AOS.init({
 });
 
 
-
-
-///////// бургер меню//////////
-const burger = document.getElementById('burger');
-const closeMenu = document.getElementById('closeMenu');
-const menu = document.querySelector('.header__nav');
-const overlay = document.getElementById('overlay');
-
-burger.addEventListener('click', () => {
-	menu.classList.toggle('active');
-	overlay.classList.toggle('active');
-	burger.classList.toggle('open');
-	document.body.classList.toggle('no-scroll'); // блокуємо/розблокуємо скрол
-});
-
-closeMenu.addEventListener("click", () => {
-	menu.classList.remove('active');
-	overlay.classList.remove('active');
-	burger.classList.remove('open');
-	document.body.classList.remove('no-scroll'); // обов'язково розблокувати
-});
-
-overlay.addEventListener('click', () => {
-	menu.classList.remove('active');
-	overlay.classList.remove('active');
-	burger.classList.remove('open');
-	document.body.classList.remove('no-scroll'); // обов'язково розблокувати
-});
 

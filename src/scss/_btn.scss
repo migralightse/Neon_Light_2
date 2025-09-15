@@ -1,4 +1,4 @@
-.btn {
+.land-btn {
 	display: flex;                  /* flex замість inline-block */
 	align-items: center;            /* вертикальне вирівнювання */
 	justify-content: center;        /* горизонтальне вирівнювання */
@@ -25,7 +25,7 @@
 }
 
 
-.btn.mod {
+.land-btn.mod {
 	display: inline-block;
 	padding: 13px 0;
 	width: 100%; // висота і ширина кнопки

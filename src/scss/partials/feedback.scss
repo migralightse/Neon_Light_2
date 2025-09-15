@@ -1,13 +1,13 @@
-.feedback{
+.land-feedback{
 	background-color: black;
 	position: relative;
-	.back_img{
+	.land-back_img{
 		z-index: 1;
 		position: absolute;
 		left: 100px;
 		bottom: 0;
 	}
-	.feedback_title{
+	.land-feedback_title{
 		color: #FFF;
 		font-family: 'Unbounded', sans-serif;
 		font-size: 36px;
@@ -17,7 +17,7 @@
 		padding: 105px 0 24px 0;
 	}
 
-	.feedback_swiper{
+	.land-feedback_swiper{
 		display: flex;
 		gap: 38px;
 		position: relative;
@@ -37,19 +37,19 @@
 			stroke-width: 2px;
 			stroke: #FFF;
 			padding: 32px 39px 32px 37px;
-			.feedback_img{
+			.land-feedback_img{
 				width: 120px;
 				height: 120px;
 				border-radius: 8px;
 				overflow: hidden;
 			}
-			.feedback_desc{
+			.land-feedback_desc{
 				max-width: 350px;
-				.title_top{
+				.land-title_top{
 					display: flex;
 					justify-content: space-between;
 					padding-bottom: 8px;
-					.title_name{
+					.land-title_name{
 						color: #FFF;
 
 						/* Subheading/bold 14px */
@@ -59,7 +59,7 @@
 						font-weight: 700;
 						line-height: 110%; /* 15.4px */
 					}
-					.title_date{
+					.land-title_date{
 						color: #FFF;
 
 						/* Body/reg 14px */
@@ -70,7 +70,7 @@
 						line-height: 140%; /* 19.6px */
 					}
 				}
-				.title_bottom{
+				.land-title_bottom{
 					overflow: hidden;
 					color: rgba(255, 255, 255, 0.80);
 					text-overflow: ellipsis;
@@ -83,14 +83,14 @@
 					font-weight: 400;
 					line-height: 140%; /* 19.6px */
 				}
-				.feedback_rait{
+				.land-feedback_rait{
 					display: flex;
 					justify-content: space-between;
 					max-width: 96px;
 					width: 100%;
 					padding-bottom: 8px;
 				}
-				.feedback_info{
+				.land-feedback_info{
 					color: #FFF;
 
 					/* Body/reg 16px */
@@ -142,19 +142,19 @@
 
 
 @media (max-width: 1199px){
-	.feedback .feedback_title{
+	.land-feedback .land-feedback_title{
 		padding: 60px 0 24px 0;
 	}
 }
 @media (max-width: 480px){
-	.feedback .feedback_title{
+	.land-feedback .land-feedback_title{
 		padding: 24px 0 24px 0;
 		font-size: 30px;
 	}
-	.feedback .feedback_swiper{
+	.land-feedback .land-feedback_swiper{
 		padding-bottom: 48px;
 	}
-	.feedback .feedback_swiper .swiper-pagination{
+	.land-feedback .land-feedback_swiper .swiper-pagination{
 		bottom: 20px;
 	}
 }

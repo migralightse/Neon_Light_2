@@ -1,25 +1,25 @@
-.how_do {
-	.filter-btn {
+.land-how_do {
+	.land-filter-btn {
 		margin-bottom: 0;
 		margin-right: 14px;
 	}
 
-	.showcase_filter {
+	.land-showcase_filter {
 		padding: 10px;
 		border-radius: 40px;
 		background: var(--Body-Light-Grey, #F9F9F9);
 		margin-bottom: 29px;
 	}
 
-	.showcase_title {
+	.land-showcase_title {
 		padding-bottom: 24px;
 	}
 
-	.showcase_top {
+	.land-showcase_top {
 		padding: 107px 0 0 0;
 	}
 
-	.how_do_swiper {
+	.land-how_do_swiper {
 		position: relative;
 		width: 100vw;
 		margin-left: calc(50% - 50vw);
@@ -32,7 +32,7 @@
 
 		}
 
-		.how_do_swiper__item {
+		.land-how_do_swiper__item {
 			flex-shrink: 0;
 			max-width: 384px;
 			height: 384px;
@@ -41,7 +41,7 @@
 				opacity: 1;
 			}
 
-			.how_do__img {
+			.land-how_do__img {
 				position: relative;
 				height: 100%;
 				overflow: hidden;
@@ -53,7 +53,7 @@
 					object-fit: cover;
 				}
 
-				.how_do__title {
+				.land-how_do__title {
 					position: absolute;
 					bottom: 20px;
 					left: 20px;
@@ -108,26 +108,26 @@
 
 
 @media (max-width: 1199px) {
-	.how_do .showcase_top {
+	.land-how_do .land-showcase_top {
 		padding: 60px 0 0 0;
 	}
 
 }
 
 @media (max-width: 480px) {
-	.how_do .showcase_top {
+	.land-how_do .land-showcase_top {
 		padding: 24px 0 0 0;
 	}
-	.how_do .showcase_title {
+	.land-how_do .land-showcase_title {
 		font-size: 30px;
 	}
-	.how_do .how_do_swiper {
+	.land-how_do .land-how_do_swiper {
 		padding-bottom: 48px;
 	}
-	.how_do .how_do_swiper .swiper-pagination {
+	.land-how_do .land-how_do_swiper .swiper-pagination {
 		bottom: 20px;
 	}
-	.how_do .how_do_swiper .how_do_swiper__item{
+	.land-how_do .land-how_do_swiper .land-how_do_swiper__item{
 		height: 320px;
 	}
 }

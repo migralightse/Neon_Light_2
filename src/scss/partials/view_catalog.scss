@@ -1,8 +1,8 @@
-.view_catalog {
+.land-view_catalog {
 	background-color: #FFFFFF;
 	position: relative;
 
-	.back_img_ellipse{
+	.land-back_img_ellipse{
 		position: absolute;
 		z-index: 1;
 		right: 20px;
@@ -10,20 +10,20 @@
 
 	}
 
-	.view_catalog_wrapper {
+	.land-view_catalog_wrapper {
 		display: flex;
 		justify-content: space-between;
 		padding-bottom: 122px;
 	}
 
-	.view_catalog_desc {
+	.land-view_catalog_desc {
 		max-width: 610px;
 		height: auto;
 		width: 100%;
 		padding-top: 109px;
 		z-index: 2;
 
-		.catalog__title {
+		.land-catalog__title {
 			color: #202020;
 
 			/* Heading/h2 */
@@ -35,7 +35,7 @@
 			padding-bottom: 27px;
 		}
 
-		.catalog_info {
+		.land-catalog_info {
 			color: var(--Text-Secondary, #434343);
 
 			/* Body/reg 16px */
@@ -48,10 +48,10 @@
 
 		}
 
-		.catalog_button {
-			.btn {
+		.land-catalog_button {
+			.land-btn {
 				width: auto;
-				max-width: none;
+				max-width: 296px;
 				padding: 20px 26px;
 
 			}
@@ -62,7 +62,7 @@
 		}
 	}
 
-	.view_catalog_img {
+	.land-view_catalog_img {
 		padding-top: 95px;
 		max-width: 486px;
 		height: 600px;

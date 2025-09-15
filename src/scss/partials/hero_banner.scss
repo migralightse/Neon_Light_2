@@ -1,11 +1,11 @@
-.hero_background {
+.land-hero_background {
 	width: auto;
 
 	background-color: black;
 	position: relative;
 	z-index: 1;
 
-	.hero_back_img {
+	.land-hero_back_img {
 		position: absolute;
 		right: 0;
 		width: 60%;
@@ -23,12 +23,12 @@
 
 	}
 
-	.container {
-		.hero_banner__info{
+	.land-container {
+		.land-hero_banner__info{
 			max-width: 510px;
 			padding: 256px 0 143px 0;
 		}
-		.hero_banner__title {
+		.land-hero_banner__title {
 			position: relative;
 			z-index: 3;
 			color: var(--Text-Inverse, #FFF);
@@ -43,7 +43,7 @@
 
 		}
 
-		.hero_banner__descriptions {
+		.land-hero_banner__descriptions {
 			position: relative;
 			z-index: 3;
 			padding-bottom: 40px;
@@ -57,18 +57,18 @@
 			line-height: 140%; /* 25.2px */
 		}
 
-		.hero_banner_btn{
+		.land-hero_banner_btn{
 			display: flex;
 			gap: 12px;
 		}
 
-		.hero_banner_bottom{
+		.land-hero_banner_bottom{
 			display: flex;
 			justify-content: space-between;
 			z-index: 3;
 			position: relative;
 			padding-bottom: 40px;
-			.hero_banner_sell{
+			.land-hero_banner_sell{
 				display: flex;
 				gap: 16px;
 				position: relative;
@@ -103,26 +103,26 @@
 
 
 @media (max-width: 1199px){
-	.btn{
+	.land-btn{
 		padding: 16px 14px;
 	}
-	.hero_background .container .hero_banner__info{
+	.land-hero_background .land-container .land-hero_banner__info{
 		padding: 156px 0 70px 0;
 	}
-	.hero_background .container .hero_banner__title{
+	.land-hero_background .land-container .land-hero_banner__title{
 		font-size: 40px;
 	}
-	.hero_background .container .hero_banner__descriptions{
+	.land-hero_background .land-container .land-hero_banner__descriptions{
 		font-size: 16px;
 		padding-bottom: 24px;
 	}
-	.hero_background .container .hero_banner_bottom{
+	.land-hero_background .land-container .land-hero_banner_bottom{
 		padding-bottom: 24px;
 	}
-	.hero_background .container .hero_banner_bottom .hero_banner_sell:not(:last-child)::after{
+	.land-hero_background .land-container .land-hero_banner_bottom .land-hero_banner_sell:not(:last-child)::after{
 		display: none;
 	}
-	.hero_background .container .hero_banner_bottom {
+	.land-hero_background .land-container .land-hero_banner_bottom {
 		flex-wrap: wrap;           /* ✅ дозволяє переносити елементи */
 		justify-content: center;   /* можна ще центрувати елементи */
 		gap: 20px;                 /* проміжки між рядами */
@@ -131,39 +131,39 @@
 
 
 @media (max-width: 768px){
-	.hero_background .container .hero_banner__title{
+	.land-hero_background .land-container .land-hero_banner__title{
 		font-size: 35px;
 	}
-	.hero_background .container .hero_banner__descriptions {
+	.land-hero_background .land-container .land-hero_banner__descriptions {
 		font-size: 14px;
 		padding-bottom: 24px;
 	}
-	.btn {
+	.land-btn {
 		padding: 14px 12px;
 		font-size: 14px;
 	}
-	.hero_background .container .hero_banner_bottom .hero_banner_sell p{
+	.land-hero_background .land-container .land-hero_banner_bottom .land-hero_banner_sell p{
 		font-size: 14px;
 	}
-	.hero_background .container .hero_banner_bottom{
+	.land-hero_background .land-container .land-hero_banner_bottom{
 		flex-wrap: nowrap;
 		flex-direction: column;
 	}
-	.hero_background .container .hero_banner__info {
+	.land-hero_background .land-container .land-hero_banner__info {
 		padding: 156px 0 24px 0;
 	}
 }
 
 
 @media (max-width: 480px){
-	.hero_background .container .hero_banner__title{
+	.land-hero_background .land-container .land-hero_banner__title{
 		font-size: 30px;
 	}
-	.btn {
+	.land-btn {
 		padding: 12px 10px;
 		font-size: 14px;
 	}
-	.hero_background .container .hero_banner__info {
+	.land-hero_background .land-container .land-hero_banner__info {
 		padding: 130px 0 24px 0;
 	}
 }
