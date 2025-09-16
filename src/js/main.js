@@ -14,13 +14,13 @@ function initSwiper() {
 		slidesPerView: "auto",
 		spaceBetween: 36,
 		loop: true,
+		loopedSlides: allSlides.length,
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false,
 		},
 		speed: 3000,
-		freeMode: true,
-		freeModeMomentum: false,
+		freeMode: false, // 🔥 якщо важлива правильна пагінація
 		slidesOffsetBefore: 0,
 		slidesOffsetAfter: (window.innerWidth - 1200) / 2,
 		pagination: {
@@ -28,14 +28,13 @@ function initSwiper() {
 			clickable: true,
 		},
 
-		// 🔥 breakpoints
 		breakpoints: {
-			0: { // всі екрани до 480
+			0: {
 				spaceBetween: 15,
 				slidesOffsetBefore: 20,
 				slidesOffsetAfter: 20
 			},
-			480: { // екрани від 480px і вище
+			480: {
 				spaceBetween: 36,
 				slidesOffsetBefore: 0,
 				slidesOffsetAfter: (window.innerWidth - 1200) / 2
@@ -54,8 +53,8 @@ function initSwiper() {
 			},
 			slideChange(swiper) {
 				const bullets = swiper.pagination.bullets;
-				const activeIndex = swiper.realIndex;
-				const prevIndex = swiper.previousIndex % bullets.length;
+				const activeIndex = swiper.realIndex; // ✅ завжди realIndex
+				const prevIndex = swiper.previousRealIndex; // ✅ теж реальний індекс
 				const parent = document.querySelector('.swiper-pagination');
 
 				if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
@@ -79,6 +78,7 @@ function initSwiper() {
 			}
 		}
 	});
+
 }
 
 
@@ -124,10 +124,10 @@ filterBtns.forEach(btn => {
 ///showcase_swiper_bottom///
 const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
 	slidesPerView: "auto",
-	spaceBetween: 90, // стандартно для десктопу
+	spaceBetween: 90,
 	freeMode: true,
 	loop: true,
-	speed: 3000, // ✅ чим більше значення, тим повільніше рух
+	speed: 3000,
 	freeModeMomentum: false,
 	slidesOffsetBefore: 0,
 	slidesOffsetAfter: 0,
@@ -136,12 +136,12 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
 		disableOnInteraction: true,
 	},
 
-	// 🔥 breakpoints
+
 	breakpoints: {
-		0: { // до 480px
+		0: {
 			spaceBetween: 36
 		},
-		480: { // від 480px і вище
+		480: {
 			spaceBetween: 90
 		}
 	}
@@ -172,10 +172,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //////////swiper_3х//////////////////
 function initCustomSwiper(selector, options = {}) {
+	const allSlides = document.querySelectorAll(selector + ' .swiper-slide'); // ✅ щоб знати скільки реальних слайдів
+
 	return new Swiper(selector, {
 		slidesPerView: "auto",
-		spaceBetween: 24, // дефолтне значення
+		spaceBetween: 24,
 		loop: true,
+		loopedSlides: allSlides.length,
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: true,
@@ -187,12 +190,12 @@ function initCustomSwiper(selector, options = {}) {
 			el: selector + ' .swiper-pagination',
 			clickable: true,
 		},
-		...options, // 🔑 опції які передаємо при виклику будуть перекривати дефолтні
+		...options,
 		on: {
 			slideChange(swiper) {
 				const bullets = swiper.pagination.bullets;
 				const activeIndex = swiper.realIndex;
-				const prevIndex = swiper.previousIndex;
+				const prevIndex = swiper.previousRealIndex;
 				const parent = document.querySelector(selector + ' .swiper-pagination');
 
 				if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
@@ -236,6 +239,7 @@ const feedbackSlider = initCustomSwiper('.land-feedback_swiper', {
 });
 
 
+
 ///animate////
 AOS.init({
 	duration: 1200,
@@ -249,12 +253,10 @@ AOS.init({
 
 
 /////////////how_do///////////////////////////
-
 const howDoBtns = document.querySelectorAll('.land-how_do-btn');
 const howDoWrapper = document.querySelector('.land-how_do_swiper .swiper-wrapper');
 const howDoPreloader = document.querySelector('.land-how_do-preloader');
 let howDoSwiper;
-
 
 const allHowDoSlides = Array.from(document.querySelectorAll('.land-how_do_swiper__item'));
 
@@ -262,10 +264,12 @@ function initHowDoSwiper() {
 	if (howDoSwiper) {
 		howDoSwiper.destroy(true, true);
 	}
+
 	howDoSwiper = new Swiper('.land-how_do_swiper', {
 		slidesPerView: "auto",
 		spaceBetween: 24,
 		loop: true,
+		loopedSlides: allHowDoSlides.length,
 		autoplay: {
 			delay: 0,
 			disableOnInteraction: false,
@@ -292,7 +296,7 @@ function initHowDoSwiper() {
 			slideChange(swiper) {
 				const bullets = swiper.pagination.bullets;
 				const activeIndex = swiper.realIndex;
-				const prevIndex = swiper.previousIndex % bullets.length;
+				const prevIndex = swiper.previousRealIndex;
 				const parent = document.querySelector('.land-how_do_swiper .swiper-pagination');
 
 				if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
@@ -316,7 +320,7 @@ function initHowDoSwiper() {
 }
 
 function filterHowDoSlides(category) {
-	// показуємо прелоадер
+
 	howDoPreloader.classList.add('active');
 
 	setTimeout(() => {
@@ -329,16 +333,15 @@ function filterHowDoSlides(category) {
 			}
 		});
 
-		// ініціалізація свайпера
+
 		initHowDoSwiper();
 
-		// ховаємо прелоадер
+
 		setTimeout(() => {
 			howDoPreloader.classList.remove('active');
 		}, 300);
 	}, 500);
 }
-
 
 initHowDoSwiper();
 
