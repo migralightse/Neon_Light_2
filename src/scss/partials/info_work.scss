@@ -148,6 +148,9 @@
 
 
 @media (max-width: 1199px) {
+	.land-info_work .info_work{
+		padding: 48px 0;
+	}
 
 	.land-info_work .land-info_work_info .land-desc_wrapper:not(:last-child)::before {
 	height: 55%;
@@ -156,13 +159,10 @@
 	.land-info_work .land-info_work_title{
 		padding: 60px 0 40px 0;
 	}
-	.land-info_work .land-info_work_info .land-info_work__desc .land-desc_wrapper .land-desc_info{
-
-	}
 	.land-info_work .land-info_work_info{
 		padding-bottom: 60px;
 		flex-direction: column;
-		gap: 30px;
+		gap: 40px;
 	}
 	.land-info_work .land-info_work_info .land-info_work__desc{
 		max-width: 100%;
@@ -176,7 +176,24 @@
 	}
 }
 
+
+@media (max-width: 768px){
+	.land-info_work .info_work {
+		padding: 40px 0;
+	}
+	.land-info_work .land-info_work_info .land-info_work__img {
+		height: 290px;
+	}
+}
+
+
 @media (max-width: 480px){
+	.land-info_work .land-info_work_info .land-info_work__desc{
+		gap: 20px;
+	}
+	.land-info_work .land-info_work_info .land-desc_wrapper:not(:last-child)::before {
+		height: 48%;
+	}
 	.land-info_work .land-info_work_info {
 		gap: 40px;
 		padding-bottom: 40px;
