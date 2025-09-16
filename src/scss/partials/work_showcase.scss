@@ -18,17 +18,17 @@
 
 .land-filter-btn {
 	padding: 10px 16px;
-	margin-right: 6px; /* тільки горизонтальний проміжок */
-	margin-bottom: 10px; /* вертикальний відступ нуль */
+	margin-right: 6px;
+	margin-bottom: 10px;
 	margin-top: 0;
 
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 100%; /* 14px */
-	border: none; // чорна рамка
-	border-radius: 9999px; // повністю округлі краї
+	line-height: 100%;
+	border: none;
+	border-radius: 9999px;
 	background-color: transparent;
 	color: #000;
 	cursor: pointer;
@@ -44,7 +44,12 @@
 		background-color: #000;
 		color: #fff;
 	}
+
+	&:last-child {
+		margin-right: 0;
+	}
 }
+
 
 
 .land-showcase_slide {
@@ -203,7 +208,7 @@
 		color: var(--Text-Primary, #262626);
 
 		font-family: 'Unbounded', sans-serif;
-		font-size: 18px;
+		font-size: 22px;
 		font-style: normal;
 		font-weight: 500;
 		line-height: 110%; /* 19.8px */
