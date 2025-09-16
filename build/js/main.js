@@ -32,7 +32,7 @@ function initSwiper() {
         const parent = document.querySelector('.swiper-pagination');
         if (activeBullet && parent) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }
       },
       slideChange(swiper) {
@@ -48,10 +48,10 @@ function initSwiper() {
         const minLeft = Math.min(currentLeft, prevLeft);
         const maxLeft = Math.max(currentLeft, prevLeft);
         parent.style.setProperty('--bullet-left', minLeft + 'px');
-        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 12 + 'px');
+        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 6 + 'px');
         setTimeout(() => {
           parent.style.setProperty('--bullet-left', currentLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }, 350);
       }
     }

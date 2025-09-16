@@ -98,3 +98,30 @@ button {
 	}
 }
 
+
+
+.land-title_h1 {
+	position: relative;
+	z-index: 3;
+	color: var(--Text-Inverse, #FFF);
+	padding-bottom: 24px;
+
+
+	font-family: 'Unbounded', sans-serif;
+	font-size: 44px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 110%;
+}
+
+
+.land-title_h2 {
+	color: var(--Text-Primary, #262626);
+	padding-bottom: 26px;
+
+	font-family: 'Unbounded', sans-serif;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 110%; /* 39.6px */
+}

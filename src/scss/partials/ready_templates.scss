@@ -7,13 +7,9 @@
 		justify-content: space-between;
 		align-items: center;
 
-		.land-ready_title {
-			color: var(--Text-Primary, #262626);
-			font-family: 'Unbounded', sans-serif;
-			font-size: 36px;
-			font-style: normal;
-			font-weight: 500;
-			line-height: 120%; /* 43.2px */
+		.ready_title {
+			padding-bottom: 0;
+			width: auto;
 		}
 
 		.land-ready_btn {

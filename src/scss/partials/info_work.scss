@@ -12,17 +12,9 @@
 		bottom: 0;
 	}
 
-	.land-info_work_title {
-		max-width: 591px;
-		padding: 89px 0 55px 0;
+	.info_work {
+		padding: 80px 0 0 0;
 		color: var(--Text-Inverse, #FFF);
-
-		/* Heading/h2 */
-		font-family: 'Unbounded', sans-serif;
-		font-size: 36px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: 110%; /* 39.6px */
 	}
 
 
@@ -30,7 +22,7 @@
 	.land-info_work_info {
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items: end;
 		padding-bottom: 150px;
 		position: relative;
 

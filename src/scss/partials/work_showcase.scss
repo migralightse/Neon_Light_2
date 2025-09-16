@@ -3,26 +3,18 @@
 }
 
 .land-showcase_top {
-	padding: 68px 0 16px 0;
+	padding: 80px 0 16px 0;
 }
 
-.land-showcase_title {
-	max-width: 345px;
-	color: var(--Text-Primary, #262626);
-	padding-bottom: 26px;
-
-	/* Heading/h2 */
-	font-family: Unbounded;
-	font-size: 36px;
-	font-style: normal;
-	font-weight: 500;
-	line-height: 110%; /* 39.6px */
+.showcase_title {
+	padding-bottom: 16px;
 }
 
 .land-showcase_filter {
 	display: flex;
 	flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
 	row-gap: 10px;
+	margin-top: 10px;
 }
 
 .land-filter-btn {
@@ -58,8 +50,8 @@
 
 .land-showcase_slide {
 	display: flex;
-	max-width: 891px!important;
-	height: 600px!important;
+	max-width: 891px !important;
+	height: 600px !important;
 	padding: 24px;
 	flex-direction: column;
 	align-items: flex-start;
@@ -109,18 +101,16 @@
 }
 
 .land-showcase_swiper {
-	position: relative!important;
-	width: 100vw!important; // на всю ширину екрана
+	position: relative !important;
+	width: 100vw !important; // на всю ширину екрана
 	margin-left: calc(50% - 50vw) !important; // зсунути, щоб вирівняти з екраном
 	padding-left: calc((100vw - 1200px) / 2) !important; // старт зліва як у .container
-	overflow: hidden!important;
-	padding-bottom: 106px!important;
+	overflow: hidden !important;
+	padding-bottom: 118px !important;
 
 	.swiper-wrapper {
 		display: flex;
 	}
-
-
 
 
 	.land-swiper-slide {
@@ -129,16 +119,16 @@
 
 	.swiper-pagination {
 		position: absolute;
-		bottom: 70px!important;
+		bottom: 80px !important;
 		left: 0;
 		width: 100% !important;
-		display: flex!important;
-		justify-content: center!important;
+		display: flex !important;
+		justify-content: center !important;
 		gap: 12px;
 
 		.swiper-pagination-bullet {
-			width: 12px;
-			height: 12px;
+			width: 6px;
+			height: 6px;
 			border-radius: 50%;
 			background: #959595;
 			opacity: 0.4;
@@ -151,7 +141,7 @@
 			content: '';
 			position: absolute;
 			top: 50%;
-			height: 13px;
+			height: 6px;
 
 			border-radius: 6px;
 			background: var(--Text-Secondary, #434343);
@@ -161,14 +151,14 @@
 
 			/* динамічні змінні */
 			left: var(--bullet-left, 0);
-			width: var(--bullet-width, 12px);
+			width: var(--bullet-width, 6px);
 		}
 	}
 
 
 }
 
-.land-showcase_swiper__pre{
+.land-showcase_swiper__pre {
 	position: relative;
 }
 
@@ -189,7 +179,7 @@
 	justify-content: center;
 	align-items: center;
 
-	.land-preloader__svg{
+	.land-preloader__svg {
 		width: 100px;
 		height: 100px;
 	}
@@ -205,8 +195,6 @@
 	opacity: 1;
 	visibility: visible;
 }
-
-
 
 .land-showcase_bottom {
 	background: var(--Body-Light-Grey, #F9F9F9);
@@ -271,8 +259,8 @@
 	}
 
 	.land-filter-btn {
-		flex: 0 0 auto;                   /* кнопка не стискається */
-		scroll-snap-align: start;         /* прилипає при скролі */
+		flex: 0 0 auto; /* кнопка не стискається */
+		scroll-snap-align: start; /* прилипає при скролі */
 
 		padding: 10px 15px;
 		font-family: 'Montserrat', sans-serif;
@@ -281,7 +269,7 @@
 		font-weight: 700;
 		line-height: 100%;
 		border: none;
-		border-radius: 9999px;            /* повністю округлі краї */
+		border-radius: 9999px; /* повністю округлі краї */
 		background-color: transparent;
 		color: #000;
 		cursor: pointer;
@@ -296,13 +284,13 @@
 }
 
 @media (max-width: 768px) {
-	.land-showcase_bottom .land-showcase_swiper_bottom{
+	.land-showcase_bottom .land-showcase_swiper_bottom {
 		padding-bottom: 24px;
 	}
-	.land-showcase_bottom .land-showcase_bottom__title{
+	.land-showcase_bottom .land-showcase_bottom__title {
 		padding: 24px 0 24px 0;
 	}
-	.land-showcase_swiper .swiper-wrapper{
+	.land-showcase_swiper .swiper-wrapper {
 		gap: 0;
 	}
 	.land-showcase_slide {
@@ -311,21 +299,22 @@
 	.land-showcase_slide_img {
 		max-height: 250px;
 	}
-	.land-showcase_slide .land-showcase_slide_img{
+	.land-showcase_slide .land-showcase_slide_img {
 		max-height: 77%;
 	}
 }
+
 @media (max-width: 480px) {
-	.land-showcase_swiper .swiper-pagination{
-		bottom: 20px!important;
+	.land-showcase_swiper .swiper-pagination {
+		bottom: 20px !important;
 	}
-	.land-showcase_swiper{
-		padding-bottom: 48px!important;
+	.land-showcase_swiper {
+		padding-bottom: 48px !important;
 	}
 	.land-showcase_top {
 		padding: 24px 0 16px 0;
 	}
-	.land-showcase_title{
+	.land-showcase_title {
 		font-size: 30px;
 		padding-bottom: 24px;
 

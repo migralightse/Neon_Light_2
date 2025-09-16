@@ -28,20 +28,7 @@
 			max-width: 510px;
 			padding: 256px 0 143px 0;
 		}
-		.land-hero_banner__title {
-			position: relative;
-			z-index: 3;
-			color: var(--Text-Inverse, #FFF);
-			padding-bottom: 24px;
 
-			/* Heading/h1 */
-			font-family: 'Unbounded', sans-serif;
-			font-size: 44px;
-			font-style: normal;
-			font-weight: 500;
-			line-height: 110%; /* 48.4px */
-
-		}
 
 		.land-hero_banner__descriptions {
 			position: relative;
@@ -131,7 +118,7 @@
 
 
 @media (max-width: 768px){
-	.land-hero_background .land-container .land-hero_banner__title{
+	.land-title_h1{
 		font-size: 35px;
 	}
 	.land-hero_background .land-container .land-hero_banner__descriptions {
@@ -156,7 +143,7 @@
 
 
 @media (max-width: 480px){
-	.land-hero_background .land-container .land-hero_banner__title{
+	.land-title_h1{
 		font-size: 30px;
 	}
 	.land-btn {
