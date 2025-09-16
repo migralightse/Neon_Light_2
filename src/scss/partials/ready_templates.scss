@@ -243,10 +243,13 @@
 
 @media (max-width: 1199px) {
 	.land-ready_templates .land-ready_top {
-		padding: 60px 0 26px 0;
+		padding: 48px 0 26px 0;
 	}
 }
 @media (max-width: 768px){
+	.ready_title {
+		padding-top: 0;
+	}
 	.land-ready_btn__text{
 		display: none!important;
 	}
@@ -257,10 +260,10 @@
 		font-size: 30px;
 	}
 	.land-ready_templates .land-ready_top {
-		padding: 24px 0 16px 0;
+		padding: 40px 0 16px 0;
 	}
 	.land-ready_templates .land-ready_slider_wrapper{
-		padding-bottom: 48px;
+		padding-bottom: 55px;
 	}
 	.land-ready_templates .land-ready_slider_wrapper .swiper-pagination{
 		bottom: 20px!important;

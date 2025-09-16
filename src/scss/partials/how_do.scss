@@ -1,17 +1,10 @@
 .land-how_do {
 
-	.land-how_do_title {
-		color: var(--Text-Primary, #262626);
-		padding-bottom: 24px;
-
-		/* Heading/h2 */
-		font-family: Unbounded;
-		font-size: 36px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: 110%; /* 39.6px */
+	.how_do_title {
 		padding-top: 80px;
 	}
+
+
 
 	.how_do__filters{
 		margin-bottom: 16px;
@@ -150,6 +143,9 @@
 
 
 @media (max-width: 1199px) {
+	.land-how_do .how_do_title{
+		padding-top: 48px;
+	}
 	.land-how_do .land-showcase_top {
 		padding: 60px 0 0 0;
 	}
@@ -213,6 +209,9 @@
 }
 
 @media (max-width: 480px) {
+	.land-how_do .how_do_title{
+		padding: 40px 0 16px 0;
+	}
 	.land-how_do .land-showcase_top {
 		padding: 24px 0 0 0;
 	}
@@ -220,7 +219,7 @@
 		font-size: 30px;
 	}
 	.land-how_do .land-how_do_swiper {
-		padding-bottom: 48px;
+		padding-bottom: 55px;
 	}
 	.land-how_do .land-how_do_swiper .swiper-pagination {
 		bottom: 20px;

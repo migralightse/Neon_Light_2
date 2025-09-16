@@ -137,9 +137,10 @@
 
 
 @media (max-width: 1199px){
-	.land-feedback .land-feedback_title{
-		padding: 60px 0 24px 0;
+	.land-feedback .feedback_title{
+		padding: 48px 0 26px 0;
 	}
+
 }
 
 
@@ -159,6 +160,9 @@
 
 }
 @media (max-width: 480px){
+	.land-feedback .feedback_title{
+		padding: 40px 0 16px 0;
+	}
 	.land-feedback .land-feedback_swiper .feedback_slide .land-feedback_desc .land-feedback_info{
 		font-size: 14px;
 	}
@@ -167,7 +171,7 @@
 		font-size: 30px;
 	}
 	.land-feedback .land-feedback_swiper{
-		padding-bottom: 48px;
+		padding-bottom: 55px;
 	}
 	.land-feedback .land-feedback_swiper .swiper-pagination{
 		bottom: 20px;
