@@ -13,13 +13,12 @@
 .land-showcase_filter {
 	display: flex;
 	flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
-	row-gap: 10px;
 	margin-top: 10px;
 }
 
 .land-filter-btn {
-	padding: 10px 15px;
-	margin-right: 5px; /* тільки горизонтальний проміжок */
+	padding: 10px 16px;
+	margin-right: 6px; /* тільки горизонтальний проміжок */
 	margin-bottom: 10px; /* вертикальний відступ нуль */
 	margin-top: 0;
 
@@ -119,11 +118,11 @@
 
 	.swiper-pagination {
 		position: absolute;
-		bottom: 80px !important;
-		left: 0;
+		bottom: 80px!important ;
+		left: 0!important;
 		width: 100% !important;
-		display: flex !important;
-		justify-content: center !important;
+		display: flex;
+		justify-content: center;
 		gap: 12px;
 
 		.swiper-pagination-bullet {
@@ -200,7 +199,7 @@
 	background: var(--Body-Light-Grey, #F9F9F9);
 
 	.land-showcase_bottom__title {
-		padding: 59px 0 36px 0;
+		padding: 59px 0 32px 0;
 		color: var(--Text-Primary, #262626);
 
 		font-family: 'Unbounded', sans-serif;
@@ -312,10 +311,9 @@
 		padding-bottom: 48px !important;
 	}
 	.land-showcase_top {
-		padding: 24px 0 16px 0;
+		padding: 0 0 16px 0;
 	}
 	.land-showcase_title {
-		font-size: 30px;
 		padding-bottom: 24px;
 
 	}

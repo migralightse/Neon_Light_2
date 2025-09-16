@@ -13,25 +13,17 @@
 	.land-view_catalog_wrapper {
 		display: flex;
 		justify-content: space-between;
-		padding-bottom: 122px;
+		padding-bottom: 107px;
 	}
 
 	.land-view_catalog_desc {
 		max-width: 610px;
 		height: auto;
 		width: 100%;
-		padding-top: 109px;
+		padding-top: 122px;
 		z-index: 2;
 
-		.land-catalog__title {
-			color: #202020;
-
-			/* Heading/h2 */
-			font-family: 'Unbounded', sans-serif;
-			font-size: 36px;
-			font-style: normal;
-			font-weight: 500;
-			line-height: 110%; /* 39.6px */
+		.catalog__title {
 			padding-bottom: 27px;
 		}
 

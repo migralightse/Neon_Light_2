@@ -25,6 +25,21 @@ function initSwiper() {
       el: '.swiper-pagination',
       clickable: true
     },
+    // 🔥 breakpoints
+    breakpoints: {
+      0: {
+        // всі екрани до 480
+        spaceBetween: 15,
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20
+      },
+      480: {
+        // екрани від 480px і вище
+        spaceBetween: 36,
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: (window.innerWidth - 1200) / 2
+      }
+    },
     on: {
       init(swiper) {
         const bullets = swiper.pagination.bullets;
@@ -128,10 +143,11 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //////////swiper_3х//////////////////
-function initCustomSwiper(selector) {
+function initCustomSwiper(selector, options = {}) {
   return new Swiper(selector, {
     slidesPerView: "auto",
     spaceBetween: 24,
+    // дефолтне значення
     loop: true,
     autoplay: {
       delay: 0,
@@ -144,6 +160,8 @@ function initCustomSwiper(selector) {
       el: selector + ' .swiper-pagination',
       clickable: true
     },
+    ...options,
+    // 🔑 опції які передаємо при виклику будуть перекривати дефолтні
     on: {
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
@@ -158,10 +176,10 @@ function initCustomSwiper(selector) {
         const minLeft = Math.min(currentLeft, prevLeft);
         const maxLeft = Math.max(currentLeft, prevLeft);
         parent.style.setProperty('--bullet-left', minLeft + 'px');
-        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 12 + 'px');
+        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 6 + 'px');
         setTimeout(() => {
           parent.style.setProperty('--bullet-left', currentLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }, 350);
       },
       init(swiper) {
@@ -170,14 +188,18 @@ function initCustomSwiper(selector) {
         const parent = document.querySelector(selector + ' .swiper-pagination');
         if (activeBullet && parent) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }
       }
     }
   });
 }
-const readySlider = initCustomSwiper('.land-ready_slider_wrapper');
-const feedbackSlider = initCustomSwiper('.land-feedback_swiper');
+const readySlider = initCustomSwiper('.land-ready_slider_wrapper', {
+  spaceBetween: 24
+});
+const feedbackSlider = initCustomSwiper('.land-feedback_swiper', {
+  spaceBetween: 38
+});
 
 ///animate////
 AOS.init({
@@ -225,7 +247,7 @@ function initHowDoSwiper() {
         const parent = document.querySelector('.land-how_do_swiper .swiper-pagination');
         if (activeBullet && parent) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }
       },
       slideChange(swiper) {
@@ -239,10 +261,10 @@ function initHowDoSwiper() {
         const minLeft = Math.min(current.offsetLeft, previous.offsetLeft);
         const maxLeft = Math.max(current.offsetLeft, previous.offsetLeft);
         parent.style.setProperty('--bullet-left', minLeft + 'px');
-        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 12 + 'px');
+        parent.style.setProperty('--bullet-width', maxLeft - minLeft + 6 + 'px');
         setTimeout(() => {
           parent.style.setProperty('--bullet-left', current.offsetLeft + 'px');
-          parent.style.setProperty('--bullet-width', '12px');
+          parent.style.setProperty('--bullet-width', '6px');
         }, 350);
       }
     }

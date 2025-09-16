@@ -92,7 +92,7 @@ button {
 	margin: 0 auto;
 	max-width: 1200px;
 }
-@media (max-width: 1440px) {
+@media (max-width: 1250px) {
 	.land-container{
 		padding: 0 20px;
 	}
@@ -115,6 +115,7 @@ button {
 }
 
 
+
 .land-title_h2 {
 	color: var(--Text-Primary, #262626);
 	padding-bottom: 26px;
@@ -124,4 +125,27 @@ button {
 	font-style: normal;
 	font-weight: 500;
 	line-height: 110%; /* 39.6px */
+}
+
+
+@media (max-width: 768px){
+	.land-title_h1 {
+		font-size: 35px;
+	}
+	.land-title_h2{
+		font-size: 25px;
+		padding-top: 60px;
+	}
+}
+
+
+@media (max-width: 480px) {
+	.land-title_h1{
+		font-size: 28px;
+	}
+	.land-title_h2{
+		font-size: 22px;
+		padding-top: 40px;
+	}
+
 }

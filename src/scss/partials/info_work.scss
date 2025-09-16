@@ -3,8 +3,8 @@
 	position: relative;
 	.land-back_img{
 		position: absolute;
-		left: 108px;
-		bottom: 102px;
+		left: 65px;
+		bottom: 30px;
 	}
 	.land-back_img_ellipse{
 		position: absolute;
@@ -23,7 +23,7 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: end;
-		padding-bottom: 150px;
+		padding-bottom: 108px;
 		position: relative;
 
 		.land-info_work__img__wrapper{
@@ -74,7 +74,7 @@
 						font-size: 18px;
 						font-style: normal;
 						font-weight: 500;
-						line-height: 110%; /* 19.8px */
+						line-height: 24px; /* 19.8px */
 					}
 					.land-desc_text{
 						color: var(--Text-Disabled, #9D9D9D);

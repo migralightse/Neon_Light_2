@@ -1,7 +1,6 @@
 .land-how_do {
 
 	.land-how_do_title {
-		max-width: 345px;
 		color: var(--Text-Primary, #262626);
 		padding-bottom: 24px;
 
@@ -11,47 +10,11 @@
 		font-style: normal;
 		font-weight: 500;
 		line-height: 110%; /* 39.6px */
+		padding-top: 80px;
 	}
 
-	.land-how_do_filter {
-		display: flex;
-		flex-wrap: wrap; // щоб кнопки переносились на новий рядок на маленьких екранах
-		row-gap: 10px;
-		padding: 10px;
-		border-radius: 40px;
-		background: var(--Body-Light-Grey, #F9F9F9);
-		margin-bottom: 29px;
-
-	}
-
-	.land-how_do-btn {
-		padding: 10px 15px;
-		margin-bottom: 0;
-		margin-right: 14px; /* тільки горизонтальний проміжок */
-		margin-top: 0;
-
-		font-family: 'Montserrat', sans-serif;
-		font-size: 14px;
-		font-style: normal;
-		font-weight: 700;
-		line-height: 100%; /* 14px */
-		border: none; // чорна рамка
-		border-radius: 9999px; // повністю округлі краї
-		background-color: transparent;
-		color: #000;
-		cursor: pointer;
-		transition: all 0.4s ease-in-out;
-
-		&.active {
-			background-color: #000;
-			color: #fff;
-			border-color: #000;
-		}
-
-		&:hover {
-			background-color: #000;
-			color: #fff;
-		}
+	.how_do__filters{
+		margin-bottom: 16px;
 	}
 
 
@@ -98,7 +61,7 @@
 		margin-left: calc(50% - 50vw);
 		padding-left: calc((100vw - 1200px) / 2);
 		overflow: hidden;
-		padding-bottom: 116px;
+		padding-bottom: 118px;
 
 		.swiper-wrapper {
 			display: flex;
@@ -144,16 +107,16 @@
 
 		.swiper-pagination {
 			position: absolute;
-			bottom: 65px;
+			bottom: 80px;
 			left: 0;
-			width: 100%;
+			width: 100% ;
 			display: flex;
 			justify-content: center;
 			gap: 12px;
 
 			.swiper-pagination-bullet {
-				width: 12px;
-				height: 12px;
+				width: 6px;
+				height: 6px;
 				border-radius: 50%;
 				background: #959595;
 				opacity: 0.4;
@@ -161,19 +124,22 @@
 				z-index: 1;
 			}
 
+			// Активний індикатор
 			&::after {
 				content: '';
 				position: absolute;
 				top: 50%;
-				height: 13px;
+				height: 6px;
+
 				border-radius: 6px;
 				background: var(--Text-Secondary, #434343);
 				transform: translateY(-50%);
 				transition: all 0.15s ease-in-out;
 				z-index: 2;
 
+				/* динамічні змінні */
 				left: var(--bullet-left, 0);
-				width: var(--bullet-width, 12px);
+				width: var(--bullet-width, 6px);
 			}
 		}
 	}
