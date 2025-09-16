@@ -4,7 +4,6 @@ const showcaseWrapper = document.querySelector('.land-showcase_swiper .swiper-wr
 const preloader = document.querySelector('.land-preloader');
 let showcaseSwiper;
 
-// Зберігаємо всі слайди у памʼяті
 const allSlides = Array.from(document.querySelectorAll('.land-showcase_slide'));
 
 function initSwiper() {

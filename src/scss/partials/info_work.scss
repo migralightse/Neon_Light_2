@@ -25,19 +25,27 @@
 		line-height: 110%; /* 39.6px */
 	}
 
+
+
 	.land-info_work_info {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		padding-bottom: 150px;
 		position: relative;
+
+		.land-info_work__img__wrapper{
+
+		}
 		.land-info_work__img {
 			max-height: 490px;
 			max-width: 587px;
 			width: 100%;
 			overflow: hidden;
-			border-radius: 16px;
+
 			img{
+				border-radius: 16px;
+				width: 100%;
 				height: 100%;
 				object-fit: cover;    /* щоб не спотворювались */
 				display: none;
