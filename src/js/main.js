@@ -124,22 +124,27 @@ filterBtns.forEach(btn => {
 ///showcase_swiper_bottom///
 const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
 	slidesPerView: "auto",
-	spaceBetween: 90,
+	spaceBetween: 90, // стандартно для десктопу
 	freeMode: true,
 	loop: true,
-	speed: 3000, // ✅ чим більше значення, тим повільніше рух (наприклад, 6000-10000)
-	freeModeMomentum: false, // без інерції — рівномірний рух
+	speed: 3000, // ✅ чим більше значення, тим повільніше рух
+	freeModeMomentum: false,
 	slidesOffsetBefore: 0,
-
-
 	slidesOffsetAfter: 0,
-
 	autoplay: {
 		delay: 0,
 		disableOnInteraction: true,
 	},
 
-
+	// 🔥 breakpoints
+	breakpoints: {
+		0: { // до 480px
+			spaceBetween: 36
+		},
+		480: { // від 480px і вище
+			spaceBetween: 90
+		}
+	}
 });
 
 
