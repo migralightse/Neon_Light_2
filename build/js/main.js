@@ -121,10 +121,14 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
   },
   breakpoints: {
     0: {
-      spaceBetween: 36
+      spaceBetween: 36,
+      slidesOffsetBefore: 20,
+      slidesOffsetAfter: 20
     },
     480: {
-      spaceBetween: 90
+      spaceBetween: 90,
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: 0
     }
   }
 });
@@ -200,10 +204,30 @@ function initCustomSwiper(selector, options = {}) {
   });
 }
 const readySlider = initCustomSwiper('.land-ready_slider_wrapper', {
-  spaceBetween: 24
+  spaceBetween: 24,
+  breakpoints: {
+    0: {
+      slidesOffsetBefore: 20,
+      slidesOffsetAfter: 20
+    },
+    480: {
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: (window.innerWidth - 1200) / 2
+    }
+  }
 });
 const feedbackSlider = initCustomSwiper('.land-feedback_swiper', {
-  spaceBetween: 38
+  spaceBetween: 38,
+  breakpoints: {
+    0: {
+      slidesOffsetBefore: 20,
+      slidesOffsetAfter: 20
+    },
+    480: {
+      slidesOffsetBefore: 0,
+      slidesOffsetAfter: (window.innerWidth - 1200) / 2
+    }
+  }
 });
 
 ///animate////
@@ -212,8 +236,8 @@ AOS.init({
   easing: 'ease-out-cubic',
   offset: 150,
   delay: 0,
-  once: false,
-  mirror: true,
+  once: true,
+  mirror: false,
   anchorPlacement: 'center-bottom'
 });
 
@@ -244,6 +268,16 @@ function initHowDoSwiper() {
     pagination: {
       el: '.land-how_do_swiper .swiper-pagination',
       clickable: true
+    },
+    breakpoints: {
+      0: {
+        slidesOffsetBefore: 20,
+        slidesOffsetAfter: 20
+      },
+      480: {
+        slidesOffsetBefore: 0,
+        slidesOffsetAfter: (window.innerWidth - 1200) / 2
+      }
     },
     on: {
       init(swiper) {
