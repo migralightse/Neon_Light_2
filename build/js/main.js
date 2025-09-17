@@ -12,6 +12,7 @@ function initSwiper() {
     slidesPerView: "auto",
     spaceBetween: 36,
     loop: true,
+    watchOverflow: true,
     loopedSlides: allSlides.length,
     autoplay: {
       delay: 0,
@@ -111,6 +112,7 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
   spaceBetween: 90,
   freeMode: true,
   loop: true,
+  watchOverflow: true,
   speed: 3000,
   freeModeMomentum: false,
   slidesOffsetBefore: 0,

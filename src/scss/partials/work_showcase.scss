@@ -106,7 +106,6 @@
 
 .land-showcase_swiper {
 	position: relative !important;
-	width: 100vw !important; // на всю ширину екрана
 	margin-left: calc(50% - 50vw) !important; // зсунути, щоб вирівняти з екраном
 	padding-left: calc((100vw - 1200px) / 2) !important; // старт зліва як у .container
 	overflow: hidden !important;
@@ -222,14 +221,13 @@
 
 	.land-showcase_swiper_bottom {
 		padding-bottom: 59px;
-		width: 100vw; // на всю ширину екрана
-		margin-left: calc(50% - 50vw); // вирівнювання по екрану
-		padding-left: calc((100vw - 1200px) / 2); // старт від контейнера
+		margin-left: calc(50% - 50vw);
+		padding-left: calc((100vw - 1200px) / 2);
 		overflow: hidden;
 
 		.swiper-slide {
 			flex-shrink: 0;
-			width: auto; // щоб підлаштовувалось під контент
+			width: auto;
 		}
 	}
 
