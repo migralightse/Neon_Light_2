@@ -33,7 +33,7 @@ function initSwiper() {
         slidesOffsetBefore: 20,
         slidesOffsetAfter: 20
       },
-      480: {
+      1200: {
         spaceBetween: 36,
         slidesOffsetBefore: 0,
         slidesOffsetAfter: (window.innerWidth - 1200) / 2
@@ -127,7 +127,7 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
       slidesOffsetBefore: 20,
       slidesOffsetAfter: 20
     },
-    480: {
+    1200: {
       spaceBetween: 90,
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0
@@ -212,7 +212,7 @@ const readySlider = initCustomSwiper('.land-ready_slider_wrapper', {
       slidesOffsetBefore: 20,
       slidesOffsetAfter: 20
     },
-    480: {
+    1200: {
       slidesOffsetBefore: 0,
       slidesOffsetAfter: (window.innerWidth - 1200) / 2
     }
@@ -225,7 +225,7 @@ const feedbackSlider = initCustomSwiper('.land-feedback_swiper', {
       slidesOffsetBefore: 20,
       slidesOffsetAfter: 20
     },
-    480: {
+    1200: {
       slidesOffsetBefore: 0,
       slidesOffsetAfter: (window.innerWidth - 1200) / 2
     }
@@ -276,7 +276,7 @@ function initHowDoSwiper() {
         slidesOffsetBefore: 20,
         slidesOffsetAfter: 20
       },
-      480: {
+      1200: {
         slidesOffsetBefore: 0,
         slidesOffsetAfter: (window.innerWidth - 1200) / 2
       }

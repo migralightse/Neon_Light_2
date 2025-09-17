@@ -148,6 +148,7 @@
 
 
 @media (max-width: 1199px) {
+
 	.land-info_work .info_work{
 		padding: 48px 0;
 	}
@@ -171,7 +172,8 @@
 	.land-info_work .land-info_work_info .land-info_work__img{
 		max-width: 100%;
 		width: 100%;
-		height: 490px;
+		height: auto;
+		max-height:100% ;
 
 	}
 }
@@ -181,9 +183,7 @@
 	.land-info_work .info_work {
 		padding: 40px 0;
 	}
-	.land-info_work .land-info_work_info .land-info_work__img {
-		height: 290px;
-	}
+
 }
 
 
@@ -205,9 +205,6 @@
 		padding: 24px 0 16px 0;
 	}
 
-	.land-info_work .land-info_work_info .land-info_work__img{
-		max-height: 400px;
-	}
 
 	.land-info_work .land-info_work_info .land-info_work__desc .land-desc_wrapper .land-desc_title{
 		font-size: 16px;
