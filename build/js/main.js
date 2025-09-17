@@ -1,13 +1,12 @@
-///////////////////showcaseSwiper//////////////////////////////////////
-const filterBtns = document.querySelectorAll('.land-filter-btn');
+//////////////////// showcase ////////////////////
+const showcaseFilter = document.querySelector('.land-showcase_filter');
+const filterBtns = showcaseFilter.querySelectorAll('.land-filter-btn');
 const showcaseWrapper = document.querySelector('.land-showcase_swiper .swiper-wrapper');
 const preloader = document.querySelector('.land-preloader');
 let showcaseSwiper;
 const allSlides = Array.from(document.querySelectorAll('.land-showcase_slide'));
 function initSwiper() {
-  if (showcaseSwiper) {
-    showcaseSwiper.destroy(true, true);
-  }
+  if (showcaseSwiper) showcaseSwiper.destroy(true, true);
   showcaseSwiper = new Swiper('.land-showcase_swiper', {
     slidesPerView: "auto",
     spaceBetween: 36,
@@ -23,7 +22,7 @@ function initSwiper() {
     slidesOffsetBefore: 0,
     slidesOffsetAfter: (window.innerWidth - 1200) / 2,
     pagination: {
-      el: '.swiper-pagination',
+      el: '.land-showcase_swiper .swiper-pagination',
       clickable: true
     },
     breakpoints: {
@@ -42,34 +41,28 @@ function initSwiper() {
       init(swiper) {
         const bullets = swiper.pagination.bullets;
         const activeBullet = bullets[swiper.realIndex];
-        const parent = document.querySelector('.swiper-pagination');
+        const parent = document.querySelector('.land-showcase_swiper .swiper-pagination');
         if (activeBullet && parent) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-        swiper.el.addEventListener('mouseenter', () => {
-          swiper.autoplay.stop();
-        });
-        swiper.el.addEventListener('mouseleave', () => {
-          swiper.autoplay.start();
-        });
+        swiper.el.addEventListener('mouseenter', () => swiper.autoplay.stop());
+        swiper.el.addEventListener('mouseleave', () => swiper.autoplay.start());
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
         const activeIndex = swiper.realIndex;
         const prevIndex = swiper.previousRealIndex;
-        const parent = document.querySelector('.swiper-pagination');
+        const parent = document.querySelector('.land-showcase_swiper .swiper-pagination');
         if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
         const current = bullets[activeIndex];
         const previous = bullets[prevIndex];
-        const currentLeft = current.offsetLeft;
-        const prevLeft = previous.offsetLeft;
-        const minLeft = Math.min(currentLeft, prevLeft);
-        const maxLeft = Math.max(currentLeft, prevLeft);
+        const minLeft = Math.min(current.offsetLeft, previous.offsetLeft);
+        const maxLeft = Math.max(current.offsetLeft, previous.offsetLeft);
         parent.style.setProperty('--bullet-left', minLeft + 'px');
         parent.style.setProperty('--bullet-width', maxLeft - minLeft + 6 + 'px');
         setTimeout(() => {
-          parent.style.setProperty('--bullet-left', currentLeft + 'px');
+          parent.style.setProperty('--bullet-left', current.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }, 350);
       }
@@ -77,36 +70,24 @@ function initSwiper() {
   });
 }
 function filterSlides(category) {
-  // показуємо прелоадер
   preloader.classList.add('active');
   setTimeout(() => {
-    // міняємо слайди
     showcaseWrapper.innerHTML = "";
     allSlides.forEach(slide => {
       if (category === "all" || slide.dataset.category === category) {
         showcaseWrapper.appendChild(slide);
       }
     });
-
-    // ініціалізація свайпера
     initSwiper();
-
-    // ховаємо прелоадер
-    setTimeout(() => {
-      preloader.classList.remove('active');
-    }, 300); // затримка на плавне зникнення
-  }, 500); // затримка перед зміною слайдів
+    setTimeout(() => preloader.classList.remove('active'), 300);
+  }, 500);
 }
-
-// Старт
 initSwiper();
-
-// Обробка кліків
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter;
+    const filter = btn.dataset.filter || 'all';
     filterSlides(filter);
   });
 });
@@ -265,16 +246,15 @@ AOS.init({
   anchorPlacement: 'center-bottom'
 });
 
-/////////////how_do///////////////////////////
-const howDoBtns = document.querySelectorAll('.land-how_do-btn');
+//////////////////// how_do ////////////////////
+const howDoFilter = document.querySelector('.how_do__filters');
+const howDoBtns = howDoFilter.querySelectorAll('.land-how_do-btn');
 const howDoWrapper = document.querySelector('.land-how_do_swiper .swiper-wrapper');
 const howDoPreloader = document.querySelector('.land-how_do-preloader');
 let howDoSwiper;
 const allHowDoSlides = Array.from(document.querySelectorAll('.land-how_do_swiper__item'));
 function initHowDoSwiper() {
-  if (howDoSwiper) {
-    howDoSwiper.destroy(true, true);
-  }
+  if (howDoSwiper) howDoSwiper.destroy(true, true);
   howDoSwiper = new Swiper('.land-how_do_swiper', {
     slidesPerView: "auto",
     spaceBetween: 24,
@@ -312,12 +292,8 @@ function initHowDoSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-        swiper.el.addEventListener('mouseenter', () => {
-          swiper.autoplay.stop();
-        });
-        swiper.el.addEventListener('mouseleave', () => {
-          swiper.autoplay.start();
-        });
+        swiper.el.addEventListener('mouseenter', () => swiper.autoplay.stop());
+        swiper.el.addEventListener('mouseleave', () => swiper.autoplay.start());
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
@@ -342,7 +318,6 @@ function initHowDoSwiper() {
 function filterHowDoSlides(category) {
   howDoPreloader.classList.add('active');
   setTimeout(() => {
-    // міняємо слайди
     howDoWrapper.innerHTML = "";
     allHowDoSlides.forEach(slide => {
       if (category === "all" || slide.dataset.category === category) {
@@ -350,9 +325,7 @@ function filterHowDoSlides(category) {
       }
     });
     initHowDoSwiper();
-    setTimeout(() => {
-      howDoPreloader.classList.remove('active');
-    }, 300);
+    setTimeout(() => howDoPreloader.classList.remove('active'), 300);
   }, 500);
 }
 initHowDoSwiper();
@@ -360,7 +333,7 @@ howDoBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     howDoBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const filter = btn.dataset.filter || 'all'; // кнопка "Усі"
+    const filter = btn.dataset.filter || 'all';
     filterHowDoSlides(filter);
   });
 });
