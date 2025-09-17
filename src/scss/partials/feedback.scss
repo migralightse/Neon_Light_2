@@ -4,10 +4,13 @@
 	.land-back_img{
 		z-index: 1;
 		position: absolute;
-		left: 100px;
-		bottom: 0;
+		left: 0;
+		bottom: -4px;
+
 	}
 	.feedback_title{
+		position: relative;
+		z-index: 2;
 		color: #FFFFFF;
 		padding: 80px 0 30px 0;
 	}
@@ -24,6 +27,7 @@
 		.feedback_slide{
 			display: flex;
 			justify-content: space-between;
+			position: relative;
 			max-width: 576px;
 			width: 100%;
 			max-height: 576px;
@@ -32,6 +36,22 @@
 			stroke-width: 2px;
 			stroke: #FFF;
 			padding: 32px 39px 32px 37px;
+
+			// кавички
+			&::before {
+				content: '';
+				position: absolute;
+				left: -16px;
+				top: 30px;
+				width: 30px;
+				height: 30px;
+				background: url('/img/quotes.svg') no-repeat center/contain;
+				z-index: 2;
+			}
+
+
+
+
 			.land-feedback_img{
 				width: 120px;
 				height: 120px;
