@@ -184,9 +184,12 @@
 				transition: opacity .4s ease-in-out;
 				z-index: 2;
 				pointer-events: auto; /* дозволяє натискати на елемент */
-				a {
+				.land-more {
 					display: flex;
 					color: white;
+					gap: 10px;
+					justify-content: center;
+					align-items: center;
 
 					/* Body/reg 14px */
 					font-family: 'Montserrat', sans-serif;
@@ -194,6 +197,11 @@
 					font-style: normal;
 					font-weight: 400;
 					line-height: 140%; /* 19.6px */
+
+
+					.more_svg{
+						display: flex;
+					}
 				}
 			}
 
