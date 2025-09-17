@@ -7,16 +7,19 @@ let showcaseSwiper;
 const allSlides = Array.from(document.querySelectorAll('.land-showcase_slide'));
 function initSwiper() {
   if (showcaseSwiper) showcaseSwiper.destroy(true, true);
+  const slidesCount = showcaseWrapper.querySelectorAll('.land-showcase_slide').length;
   showcaseSwiper = new Swiper('.land-showcase_swiper', {
     slidesPerView: "auto",
     spaceBetween: 36,
-    loop: true,
+    loop: slidesCount >= 5,
+    // включаємо loop тільки якщо 5+
     watchOverflow: true,
-    loopedSlides: allSlides.length,
-    autoplay: {
+    loopedSlides: slidesCount,
+    autoplay: slidesCount >= 5 ? {
       delay: 0,
       disableOnInteraction: false
-    },
+    } : false,
+    // якщо слайдів менше 5 — autoplay вимикається
     speed: 3000,
     freeMode: false,
     slidesOffsetBefore: 0,
@@ -46,8 +49,12 @@ function initSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-        swiper.el.addEventListener('mouseenter', () => swiper.autoplay.stop());
-        swiper.el.addEventListener('mouseleave', () => swiper.autoplay.start());
+
+        // підключаємо hover тільки якщо є autoplay
+        if (swiper.params.autoplay) {
+          swiper.el.addEventListener('mouseenter', () => swiper.autoplay.stop());
+          swiper.el.addEventListener('mouseleave', () => swiper.autoplay.start());
+        }
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
@@ -121,11 +128,15 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
   },
   on: {
     init(swiper) {
+      // Вимикаємо автоплей, якщо слайдів менше 5
+      if (swiper.slides.length < 5) {
+        if (swiper.autoplay) swiper.autoplay.stop();
+      }
       swiper.el.addEventListener('mouseenter', () => {
-        swiper.autoplay.stop();
+        if (swiper.slides.length >= 5) swiper.autoplay.stop();
       });
       swiper.el.addEventListener('mouseleave', () => {
-        swiper.autoplay.start();
+        if (swiper.slides.length >= 5) swiper.autoplay.start();
       });
     }
   }
@@ -197,11 +208,14 @@ function initCustomSwiper(selector, options = {}) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-        swiper.el.addEventListener('mouseenter', () => {
+        if (swiper.slides.length < 5 && swiper.autoplay) {
           swiper.autoplay.stop();
+        }
+        swiper.el.addEventListener('mouseenter', () => {
+          if (swiper.slides.length >= 5) swiper.autoplay.stop();
         });
         swiper.el.addEventListener('mouseleave', () => {
-          swiper.autoplay.start();
+          if (swiper.slides.length >= 5) swiper.autoplay.start();
         });
       }
     }
@@ -292,8 +306,17 @@ function initHowDoSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-        swiper.el.addEventListener('mouseenter', () => swiper.autoplay.stop());
-        swiper.el.addEventListener('mouseleave', () => swiper.autoplay.start());
+
+        // ✅ Вимикаємо autoplay, якщо слайдів менше 5
+        if (swiper.slides.length < 5 && swiper.autoplay) {
+          swiper.autoplay.stop();
+        }
+        swiper.el.addEventListener('mouseenter', () => {
+          if (swiper.slides.length >= 5) swiper.autoplay.stop();
+        });
+        swiper.el.addEventListener('mouseleave', () => {
+          if (swiper.slides.length >= 5) swiper.autoplay.start();
+        });
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;

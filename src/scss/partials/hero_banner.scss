@@ -143,6 +143,9 @@
 
 
 @media (max-width: 480px) {
+	.land-hero_background .land-hero_back_img{
+		height: 77%;
+	}
 	.land-hero_background .land-container .land-hero_banner_btn{
 		flex-direction: column;
 
