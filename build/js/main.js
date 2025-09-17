@@ -20,7 +20,6 @@ function initSwiper() {
     },
     speed: 3000,
     freeMode: false,
-    // 🔥 якщо важлива правильна пагінація
     slidesOffsetBefore: 0,
     slidesOffsetAfter: (window.innerWidth - 1200) / 2,
     pagination: {
@@ -48,11 +47,17 @@ function initSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
+        swiper.el.addEventListener('mouseenter', () => {
+          swiper.autoplay.stop();
+        });
+        swiper.el.addEventListener('mouseleave', () => {
+          swiper.autoplay.start();
+        });
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
-        const activeIndex = swiper.realIndex; // ✅ завжди realIndex
-        const prevIndex = swiper.previousRealIndex; // ✅ теж реальний індекс
+        const activeIndex = swiper.realIndex;
+        const prevIndex = swiper.previousRealIndex;
         const parent = document.querySelector('.swiper-pagination');
         if (!parent || !bullets[activeIndex] || !bullets[prevIndex]) return;
         const current = bullets[activeIndex];
@@ -132,6 +137,16 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
       slidesOffsetBefore: 0,
       slidesOffsetAfter: 0
     }
+  },
+  on: {
+    init(swiper) {
+      swiper.el.addEventListener('mouseenter', () => {
+        swiper.autoplay.stop();
+      });
+      swiper.el.addEventListener('mouseleave', () => {
+        swiper.autoplay.start();
+      });
+    }
   }
 });
 
@@ -144,9 +159,10 @@ document.addEventListener("DOMContentLoaded", () => {
       buttons.forEach(b => b.classList.remove("active"));
       images.forEach(img => img.classList.remove("active"));
       btn.classList.add("active");
-      const step = parseInt(btn.getAttribute("data-step"), 10);
-      if (images[step]) {
-        images[step].classList.add("active");
+      const step = btn.dataset.step;
+      const imgToShow = document.querySelector(`.land-info_work__img img[data-step="${step}"]`);
+      if (imgToShow) {
+        imgToShow.classList.add("active");
       }
     });
   });
@@ -154,9 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //////////swiper_3х//////////////////
 function initCustomSwiper(selector, options = {}) {
-  const allSlides = document.querySelectorAll(selector + ' .swiper-slide'); // ✅ щоб знати скільки реальних слайдів
-
-  return new Swiper(selector, {
+  const allSlides = document.querySelectorAll(selector + ' .swiper-slide');
+  const swiper = new Swiper(selector, {
     slidesPerView: "auto",
     spaceBetween: 24,
     loop: true,
@@ -201,9 +216,16 @@ function initCustomSwiper(selector, options = {}) {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
+        swiper.el.addEventListener('mouseenter', () => {
+          swiper.autoplay.stop();
+        });
+        swiper.el.addEventListener('mouseleave', () => {
+          swiper.autoplay.start();
+        });
       }
     }
   });
+  return swiper;
 }
 const readySlider = initCustomSwiper('.land-ready_slider_wrapper', {
   spaceBetween: 24,
@@ -290,6 +312,12 @@ function initHowDoSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
+        swiper.el.addEventListener('mouseenter', () => {
+          swiper.autoplay.stop();
+        });
+        swiper.el.addEventListener('mouseleave', () => {
+          swiper.autoplay.start();
+        });
       },
       slideChange(swiper) {
         const bullets = swiper.pagination.bullets;
