@@ -151,9 +151,9 @@
 
 	}
 	.land-hero_back_img {
-		width: 100% !important; // наприклад, щоб займала всю ширину
+		width: 100% !important;
 		img {
-			filter: brightness(0.5); /* 0.5 = темніше, 1 = без змін */
+			filter: brightness(0.5);
 		}
 	}
 	.hero_title {
