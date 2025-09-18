@@ -63,8 +63,9 @@
 					gap: 30px;
 					position: relative;
 					.land-desc_info{
-						display: grid;
+						display: flex;
 						gap: 8px;
+						flex-direction: column;
 					}
 					.land-desc_title{
 						color: var(--Text-Inverse, #FFF);
@@ -188,6 +189,9 @@
 
 
 @media (max-width: 480px){
+	.land-desc_info{
+		min-height: 100px;
+	}
 	.land-info_work .land-info_work_info .land-info_work__desc{
 		gap: 20px;
 	}
