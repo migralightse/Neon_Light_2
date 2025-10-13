@@ -15,7 +15,7 @@ gulp.task('js', (done) => {
 	.pipe(mode.development(sourcemaps.init()))
 	.pipe(include())
 	.on('error', () => {
-		notify('Javascript include error');
+		// notify({ message: 'Javascript include error' })
 	})
 	.pipe(babel())
 	.on('error', (error) => {

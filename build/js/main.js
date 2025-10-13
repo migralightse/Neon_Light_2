@@ -12,21 +12,24 @@ function initSwiper() {
     slidesPerView: "auto",
     spaceBetween: 36,
     loop: slidesCount >= 5,
-    // включаємо loop тільки якщо 5+
     watchOverflow: true,
     loopedSlides: slidesCount,
-    autoplay: slidesCount >= 5 ? {
-      delay: 0,
-      disableOnInteraction: false
-    } : false,
-    // якщо слайдів менше 5 — autoplay вимикається
-    speed: 3000,
+    autoplay: {
+      delay: 9999999,
+      disableOnInteraction: true
+    },
+    allowTouchMove: false,
+    speed: 1500,
     freeMode: false,
     slidesOffsetBefore: 0,
     slidesOffsetAfter: (window.innerWidth - 1200) / 2,
     pagination: {
       el: '.land-showcase_swiper .swiper-pagination',
       clickable: true
+    },
+    navigation: {
+      nextEl: '.land-showcase-navigation .swiper-button-next',
+      prevEl: '.land-showcase-navigation .swiper-button-prev'
     },
     breakpoints: {
       0: {
@@ -98,6 +101,26 @@ filterBtns.forEach(btn => {
     filterSlides(filter);
   });
 });
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(() => {
+    document.querySelectorAll('.beer-slider').forEach(slider => {
+      new BeerSlider(slider);
+
+      // чекати появу повзунка
+      const interval = setInterval(() => {
+        const handle = slider.querySelector('.beer-handle');
+        if (handle) {
+          handle.innerHTML = `
+						<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 11 16">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5C0 0.223858 0.223858 0 0.5 0C0.776142 0 1 0.223858 1 0.5V15.5C1 15.7761 0.776142 16 0.5 16C0.223858 16 0 15.7761 0 15.5V0.5ZM5 0.5C5 0.223858 5.22386 0 5.5 0C5.77614 0 6 0.223858 6 0.5V15.5C6 15.7761 5.77614 16 5.5 16C5.22386 16 5 15.7761 5 15.5V0.5ZM11 0.5C11 0.223858 10.7761 0 10.5 0C10.2239 0 10 0.223858 10 0.5V15.5C10 15.7761 10.2239 16 10.5 16C10.7761 16 11 15.7761 11 15.5V0.5Z" fill="currentColor"></path>
+						</svg>
+					`;
+          clearInterval(interval);
+        }
+      }, 50);
+    });
+  }, 500);
+});
 
 ///showcase_swiper_bottom///
 const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
@@ -144,14 +167,20 @@ const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
 
 ////////////////////work_info///////////////////////
 document.addEventListener("DOMContentLoaded", () => {
+  const wrappers = document.querySelectorAll(".land-desc_wrapper");
   const buttons = document.querySelectorAll(".land-info_work__desc button");
   const images = document.querySelectorAll(".land-info_work__img img");
-  buttons.forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
+  wrappers.forEach(wrapper => {
+    wrapper.addEventListener("mouseenter", () => {
+      const btn = wrapper.querySelector("button");
+      const step = btn.dataset.step;
+
+      // Зняти активність зі всіх
       buttons.forEach(b => b.classList.remove("active"));
       images.forEach(img => img.classList.remove("active"));
+
+      // Додати активність відповідним елементам
       btn.classList.add("active");
-      const step = btn.dataset.step;
       const imgToShow = document.querySelector(`.land-info_work__img img[data-step="${step}"]`);
       if (imgToShow) {
         imgToShow.classList.add("active");
@@ -253,7 +282,7 @@ const feedbackSlider = initCustomSwiper('.land-feedback_swiper', {
 AOS.init({
   duration: 1200,
   easing: 'ease-out-cubic',
-  offset: 150,
+  offset: 50,
   delay: 0,
   once: true,
   mirror: false,
@@ -306,8 +335,6 @@ function initHowDoSwiper() {
           parent.style.setProperty('--bullet-left', activeBullet.offsetLeft + 'px');
           parent.style.setProperty('--bullet-width', '6px');
         }
-
-        // ✅ Вимикаємо autoplay, якщо слайдів менше 5
         if (swiper.slides.length < 5 && swiper.autoplay) {
           swiper.autoplay.stop();
         }

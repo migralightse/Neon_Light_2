@@ -291,6 +291,77 @@
 	}
 }
 
+//////////////
+.beer-slider {
+	position: relative;
+	border-radius: 20px;
+	overflow: hidden;
+	box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+	cursor: ew-resize;
+
+	img {
+		width: 100%;
+		display: block;
+		object-fit: cover;
+	}
+}
+
+
+.beer-reveal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	overflow: hidden;
+	border-right: 3px solid #fff;
+}
+
+
+.beer-handle {
+	background: white!important;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: grab;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+.beer-handle svg {
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+}
+
+.beer-handle::before,
+.beer-handle::after {
+	content: none!important;
+}
+
+
+
+.beer-slider[data-beer-label]::after{
+	background: white!important;
+}
+.beer-reveal[data-beer-label]::after{
+	background: white!important;
+}
+.swiper-button-prev::after {
+	color: white;
+}
+.swiper-button-next::after{
+	color: white;
+}
+
+
+
+
+
+
+
 @media (max-width: 768px) {
 	.land-showcase_top {
 		padding: 0 0 16px 0;

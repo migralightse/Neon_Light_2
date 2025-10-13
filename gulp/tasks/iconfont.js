@@ -55,7 +55,7 @@ gulp.task( 'iconfont', (done) => {
     .pipe(gulp.dest(config.dest.css + 'fonts/'))
     .pipe(gulp.dest(config.theme.assets))
     .pipe(browserSync.stream())
-    .pipe(notify('Icon font updated!'));
+		// .pipe(notify({ message: 'Icon font updated!' }));
     done()
 })
 

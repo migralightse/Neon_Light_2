@@ -25,7 +25,7 @@ gulp.task('sprite', (done) => {
 	// create sprite scss file
 	spriteData.css
 		.pipe(gulp.dest(config.src.sass + '/lib/'))
-		.pipe(notify( 'New sprite created!'));
+		// .pipe(notify({ message: 'New sprite created!' }));
 
 	spriteData.pipe(browserSync.stream())
 
