@@ -25,7 +25,7 @@ function initSwiper() {
 			disableOnInteraction: true
 		},
 
-		allowTouchMove: false,
+		allowTouchMove: true,
 		speed: 1500,
 		freeMode: false,
 		slidesOffsetBefore: 0,
@@ -121,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		document.querySelectorAll('.beer-slider').forEach(slider => {
 			new BeerSlider(slider);
 
-			// чекати появу повзунка
 			const interval = setInterval(() => {
 				const handle = slider.querySelector('.beer-handle');
 				if(handle) {
