@@ -38,7 +38,8 @@ function initSwiper() {
 			0: {
 				spaceBetween: 15,
 				slidesOffsetBefore: 20,
-				slidesOffsetAfter: 20
+				slidesOffsetAfter: 20,
+				allowTouchMove: false
 			},
 			1200: {
 				spaceBetween: 36,
