@@ -20,11 +20,7 @@ function initSwiper() {
 		loop: slidesCount >= 5,
 		watchOverflow: true,
 		loopedSlides: slidesCount,
-		autoplay: {
-			delay: 9999999,
-			disableOnInteraction: true
-		},
-
+		autoplay: false,
 		allowTouchMove: true,
 		speed: 1500,
 		freeMode: false,
