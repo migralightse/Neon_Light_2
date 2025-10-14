@@ -356,6 +356,30 @@
 	color: #838383;
 }
 
+.icv__circle {
+	background: white !important;
+	backdrop-filter: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		display: block;
+	}
+}
+.icv__arrow-wrapper{
+	display: none!important;
+}
+
+.icv__label{
+	top: 1rem!important;
+	bottom: auto!important;
+	background: white!important;
+	color: black!important;
+	box-shadow: 0 21px 24px rgba(0,0,0,.1490196078);
+}
 
 
 
@@ -432,8 +456,10 @@
 		padding-bottom: 24px;
 
 	}
-
-
+	.icv__circle{
+		height: 40px!important;
+		width: 40px!important;
+	}
 
 }
 
