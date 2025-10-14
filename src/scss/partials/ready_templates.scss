@@ -252,6 +252,13 @@
 	.land-ready_templates .land-ready_top {
 		padding: 48px 0 26px 0;
 	}
+
+	.land-ready_btn{
+		a svg {
+			width: 30px;
+			height: 30px;
+		}
+	}
 }
 @media (max-width: 768px){
 	.ready_title {
