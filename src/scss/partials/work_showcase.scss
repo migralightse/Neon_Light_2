@@ -485,11 +485,14 @@
 		height: 40px!important;
 		width: 40px!important;
 	}
-
-
-
-
 }
+
+
+body.icv__body {
+	position: static !important;
+	left: auto !important;
+}
+
 
 
 

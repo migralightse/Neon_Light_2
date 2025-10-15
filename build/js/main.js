@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
     el.appendChild(container);
 
-    // Ініціалізація ImageCompare
+    // Ініціалізуємо ImageCompare
     const viewer = new ImageCompare(container, {
       controlColor: '#ffffff',
       addCircle: true,
@@ -126,36 +126,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     viewer.mount();
-
-    // При перетягуванні прибираємо position: fixed та left з body
-    const removeBodyFixed = () => {
-      if (document.body.style.position === 'fixed' || document.body.style.left === '0px') {
-        document.body.style.position = '';
-        document.body.style.left = '';
-      }
-    };
-    container.addEventListener('touchstart', removeBodyFixed, {
-      passive: true
-    });
-    container.addEventListener('touchmove', e => {
-      removeBodyFixed();
-      e.preventDefault(); // блокує скрол лише під час перетягування
-    }, {
-      passive: false
-    });
-
-    // На випадок, якщо стилі додаються динамічно через бібліотеку AOS
-    const observer = new MutationObserver(mutations => {
-      mutations.forEach(mutation => {
-        if (mutation.target === document.body) {
-          removeBodyFixed();
-        }
-      });
-    });
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ['style']
-    });
   });
 });
 
