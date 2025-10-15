@@ -100,60 +100,33 @@ filterBtns.forEach(btn => {
   });
 });
 document.addEventListener('DOMContentLoaded', function () {
-  setTimeout(() => {
-    const elements = document.querySelectorAll('.land-compare');
-    elements.forEach(el => {
-      const before = el.dataset.before;
-      const after = el.dataset.after;
-      const container = document.createElement('div');
-      container.classList.add('icv');
-      container.innerHTML = `
-				<img src="${before}" alt="Before">
-				<img src="${after}" alt="After">
-			`;
-      el.appendChild(container);
-      const viewer = new ImageCompare(container, {
-        controlColor: '#ffffff',
-        addCircle: true,
-        showLabels: true,
-        labelOptions: {
-          before: 'До',
-          after: 'Після',
-          onHover: false
-        }
-      });
-      viewer.mount();
+  const elements = document.querySelectorAll('.land-compare');
+  elements.forEach(el => {
+    const before = el.dataset.before;
+    const after = el.dataset.after;
 
-      // вставляємо SVG у кружечок після ініціалізації
-      setTimeout(() => {
-        const circle = el.querySelector('.icv__circle');
-        if (circle) {
-          circle.innerHTML = `
-						<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" fill="none" viewBox="0 0 11 16" width="14" height="20">
-							<path fill-rule="evenodd" clip-rule="evenodd" d="M0 0.5C0 0.223858 0.223858 0 0.5 0C0.776142 0 1 0.223858 1 0.5V15.5C1 15.7761 0.776142 16 0.5 16C0.223858 16 0 15.7761 0 15.5V0.5ZM5 0.5C5 0.223858 5.22386 0 5.5 0C5.77614 0 6 0.223858 6 0.5V15.5C6 15.7761 5.77614 16 5.5 16C5.22386 16 5 15.7761 5 15.5V0.5ZM11 0.5C11 0.223858 10.7761 0 10.5 0C10.2239 0 10 0.223858 10 0.5V15.5C10 15.7761 10.2239 16 10.5 16C10.7761 16 11 15.7761 11 15.5V0.5Z" fill="black"></path>
-						</svg>
-					`;
-        }
-      }, 100);
+    // Створюємо контейнер для ImageCompare
+    const container = document.createElement('div');
+    container.classList.add('icv');
+    container.innerHTML = `
+            <img src="${before}" alt="Before">
+            <img src="${after}" alt="After">
+        `;
+    el.appendChild(container);
 
-      // 🧩 Фікс для iOS: блокуємо скрол на всій зоні drag
-      setTimeout(() => {
-        const wrapper = el.querySelector('.icv');
-        if (wrapper) {
-          wrapper.addEventListener('touchstart', e => {
-            e.stopPropagation();
-          }, {
-            passive: false
-          });
-          wrapper.addEventListener('touchmove', e => {
-            e.preventDefault();
-          }, {
-            passive: false
-          });
-        }
-      }, 500);
+    // Ініціалізуємо ImageCompare
+    const viewer = new ImageCompare(container, {
+      controlColor: '#ffffff',
+      addCircle: true,
+      showLabels: true,
+      labelOptions: {
+        before: 'До',
+        after: 'Після',
+        onHover: false
+      }
     });
-  }, 500);
+    viewer.mount();
+  });
 });
 
 ///showcase_swiper_bottom///
