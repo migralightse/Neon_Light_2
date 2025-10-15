@@ -144,12 +144,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
-AOS.init({
-	disable: 'mobile',
-});
-
-
-
 
 ///showcase_swiper_bottom///
 const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {

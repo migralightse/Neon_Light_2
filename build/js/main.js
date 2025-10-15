@@ -128,9 +128,6 @@ document.addEventListener('DOMContentLoaded', function () {
     viewer.mount();
   });
 });
-AOS.init({
-  disable: 'mobile'
-});
 
 ///showcase_swiper_bottom///
 const showcaseSwiperBottom = new Swiper('.land-showcase_swiper_bottom', {
