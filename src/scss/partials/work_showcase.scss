@@ -461,6 +461,18 @@
 		width: 40px!important;
 	}
 
+	.land-compare,
+	.icv,
+	.icv__slider,
+	.icv__circle {
+		touch-action: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		overscroll-behavior: contain;
+	}
+
+
 }
 
 

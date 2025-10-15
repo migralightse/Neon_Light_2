@@ -140,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function() {
 			});
 			viewer.mount();
 
-			// вставляємо SVG у кружечок після ініціалізації
 			setTimeout(() => {
 				const circle = el.querySelector('.icv__circle');
 				if (circle) {
@@ -152,6 +151,15 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			}, 100);
 		});
+
+		setTimeout(() => {
+			const circles = document.querySelectorAll('.icv__circle');
+			circles.forEach(circle => {
+				circle.addEventListener('touchmove', e => {
+					e.preventDefault();
+				}, { passive: false });
+			});
+		}, 800);
 	}, 500);
 });
 
