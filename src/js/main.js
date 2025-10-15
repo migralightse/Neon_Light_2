@@ -113,6 +113,8 @@ filterBtns.forEach(btn => {
 		filterSlides(filter);
 	});
 });
+
+
 document.addEventListener('DOMContentLoaded', function() {
 	const elements = document.querySelectorAll('.land-compare');
 
