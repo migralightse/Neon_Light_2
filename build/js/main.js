@@ -123,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
       viewer.mount();
+
+      // вставляємо SVG у кружечок після ініціалізації
       setTimeout(() => {
         const circle = el.querySelector('.icv__circle');
         if (circle) {
@@ -133,17 +135,24 @@ document.addEventListener('DOMContentLoaded', function () {
 					`;
         }
       }, 100);
+
+      // 🧩 Фікс для iOS: блокуємо скрол на всій зоні drag
+      setTimeout(() => {
+        const wrapper = el.querySelector('.icv');
+        if (wrapper) {
+          wrapper.addEventListener('touchstart', e => {
+            e.stopPropagation();
+          }, {
+            passive: false
+          });
+          wrapper.addEventListener('touchmove', e => {
+            e.preventDefault();
+          }, {
+            passive: false
+          });
+        }
+      }, 500);
     });
-    setTimeout(() => {
-      const circles = document.querySelectorAll('.icv__circle');
-      circles.forEach(circle => {
-        circle.addEventListener('touchmove', e => {
-          e.preventDefault();
-        }, {
-          passive: false
-        });
-      });
-    }, 800);
   }, 500);
 });
 

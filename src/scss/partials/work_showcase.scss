@@ -381,6 +381,31 @@
 	box-shadow: 0 21px 24px rgba(0,0,0,.1490196078);
 }
 
+.icv,
+.icv__circle,
+.land-compare {
+	touch-action: none;
+	-webkit-user-select: none;
+	user-select: none;
+	overscroll-behavior: contain;
+	position: relative;
+}
+
+.icv {
+	overflow: hidden;
+}
+
+.icv__circle {
+	background: white;
+	border: none !important;
+	box-shadow: none !important;
+	backdrop-filter: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
 
 
 
@@ -461,16 +486,7 @@
 		width: 40px!important;
 	}
 
-	.land-compare,
-	.icv,
-	.icv__slider,
-	.icv__circle {
-		touch-action: none;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		overscroll-behavior: contain;
-	}
+
 
 
 }
