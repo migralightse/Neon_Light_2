@@ -126,6 +126,20 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     viewer.mount();
+
+    // Для мобільних: запобігаємо зсуву body і скролу під час touch
+    container.addEventListener('touchstart', e => {
+      e.stopPropagation();
+      document.body.style.position = '';
+      document.body.style.left = '';
+    }, {
+      passive: true
+    });
+    container.addEventListener('touchmove', e => {
+      e.preventDefault(); // зупиняє скрол сторінки під час перетягування
+    }, {
+      passive: false
+    });
   });
 });
 
