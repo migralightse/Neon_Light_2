@@ -144,6 +144,11 @@ document.addEventListener('DOMContentLoaded', function() {
 	});
 });
 
+AOS.init({
+	disable: 'mobile',
+});
+
+
 
 
 ///showcase_swiper_bottom///
