@@ -355,57 +355,57 @@
 .swiper-button-next::after{
 	color: #838383;
 }
-//
-//.icv__circle {
-//	background: white !important;
-//	backdrop-filter: none !important;
-//	border: none !important;
-//	box-shadow: none !important;
-//	display: flex;
-//	align-items: center;
-//	justify-content: center;
-//
-//	svg {
-//		display: block;
-//	}
-//}
-//.icv__arrow-wrapper{
-//	display: none!important;
-//}
-//
-//.icv__label{
-//	top: 1rem!important;
-//	bottom: auto!important;
-//	background: white!important;
-//	color: black!important;
-//	box-shadow: 0 21px 24px rgba(0,0,0,.1490196078);
-//}
-//
-//.icv,
-//.icv__circle,
-//.land-compare {
-//	touch-action: none;
-//	-webkit-user-select: none;
-//	user-select: none;
-//	overscroll-behavior: contain;
-//	position: relative;
-//}
-//
-//.icv {
-//	overflow: hidden;
-//}
-//
-//.icv__circle {
-//	background: white;
-//	border: none !important;
-//	box-shadow: none !important;
-//	backdrop-filter: none !important;
-//	display: flex;
-//	align-items: center;
-//	justify-content: center;
-//}
-//
-//
+
+.icv__circle {
+	background: white !important;
+	backdrop-filter: none !important;
+	border: none !important;
+	box-shadow: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	svg {
+		display: block;
+	}
+}
+.icv__arrow-wrapper{
+	display: none!important;
+}
+
+.icv__label{
+	top: 1rem!important;
+	bottom: auto!important;
+	background: white!important;
+	color: black!important;
+	box-shadow: 0 21px 24px rgba(0,0,0,.1490196078);
+}
+
+.icv,
+.icv__circle,
+.land-compare {
+	touch-action: none;
+	-webkit-user-select: none;
+	user-select: none;
+	overscroll-behavior: contain;
+	position: relative;
+}
+
+.icv {
+	overflow: hidden;
+}
+
+.icv__circle {
+	background: white;
+	border: none !important;
+	box-shadow: none !important;
+	backdrop-filter: none !important;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
 
 
 
@@ -485,16 +485,6 @@
 		height: 40px!important;
 		width: 40px!important;
 	}
-}
-
-
-body.icv__body {
-	position: static !important;
-	left: auto !important;
-}
-
-.icv__theme-wrapper{
-	cursor: pointer!important;
 }
 
 
